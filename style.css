@@ -110,3 +110,33 @@ p {
     border-left: 5px solid var(--primary-color);
     border-radius: 4px;
 }
+
+/* Table of Contents Styling */
+.toc {
+    background-color: #f9f9f9;
+    border-left: 5px solid var(--primary-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.toc ul li {
+    margin-bottom: 10px;
+}
+
+.toc ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.toc ul li a:hover {
+    color: #333;
+    text-decoration: underline;
+}

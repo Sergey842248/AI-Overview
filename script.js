@@ -3,22 +3,33 @@ const contentDe = document.getElementById('content-de');
 const contentEn = document.getElementById('content-en');
 const htmlEl = document.documentElement;
 
-let currentLang = 'de';
-
-switcher.addEventListener('click', () => {
-    if (currentLang === 'de') {
+function setLanguage(lang) {
+    if (lang === 'en') {
         contentDe.style.display = 'none';
         contentEn.style.display = 'block';
         switcher.textContent = 'Wechsle zu Deutsch';
         htmlEl.setAttribute('lang', 'en');
-        currentLang = 'en';
     } else {
         contentDe.style.display = 'block';
         contentEn.style.display = 'none';
         switcher.textContent = 'Switch to English';
         htmlEl.setAttribute('lang', 'de');
-        currentLang = 'de';
     }
+}
+
+function getLangFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('lang');
+}
+
+let currentLang = getLangFromUrl() || 'de';
+setLanguage(currentLang);
+
+switcher.addEventListener('click', () => {
+    const newLang = htmlEl.getAttribute('lang') === 'de' ? 'en' : 'de';
+    const params = new URLSearchParams(window.location.search);
+    params.set('lang', newLang);
+    window.location.search = params.toString();
 });
 
 const categoriesDe = {

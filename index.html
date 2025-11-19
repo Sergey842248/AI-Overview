@@ -13,7 +13,18 @@
         <div id="content-de" class="lang-de">
         <h1>KI-Modelle Übersicht</h1>
 
-        <h2>Anbieter</h2>
+        <h2>Inhaltsverzeichnis</h2>
+        <div class="toc">
+        <ul>
+            <li><a href="#providers">Anbieter</a></li>
+            <li><a href="#models">Modelle</a></li>
+            <li><a href="#categories">Kategorien</a></li>
+            <li><a href="#prompting">Prompting</a></li>
+            <li><a href="#glossary">Glossar</a></li>
+        </ul>
+        </div>
+
+        <h2 id="providers">Anbieter</h2>
         <table>
             <thead>
                 <tr>
@@ -122,7 +133,7 @@
             </tbody>
         </table>
 
-        <h2>Modelle</h2>
+        <h2 id="models">Modelle</h2>
         <table>
             <thead>
                 <tr>
@@ -152,7 +163,7 @@
             </tbody>
         </table>
 
-        <h2>Kategorien</h2>
+        <h2 id="categories">Kategorien</h2>
         <div style="width: 75%; margin: auto;">
             <canvas id="categoriesChartDe"></canvas>
         </div>
@@ -174,19 +185,7 @@
             </tbody>
         </table>
 
-        <h2>Wörter-Erklärungen</h2>
-        <ol>
-            <li><strong>Prompt:</strong> Anfrage an das KI-Modell</li>
-            <li><strong>Prompting:</strong> Schreiben einer Anfrage an ein KI-Modell</li>
-            <li><strong>Systemprompt:</strong> Vorgegebene Definition des KI-Modells (z.B. „Du bist ein hilfreiches moralisch richtig handelndes KI-Modell“)</li>
-            <li><strong>Halluzination:</strong> Erfindung von Informationen und Promptinhalten</li>
-            <li><strong>1 Token ≙</strong> 3 bis 4 Zeichen</li>
-            <li><strong>Reasoning:</strong> Ist das eigenständige Nachdenken des KI-Modells vor der Ausgabe der Nachricht an den Nutzer.</li>
-            <li><strong>Research:</strong> Recherche im Internet</li>
-            <li><strong>Open-Source:</strong> Quelloffen, Modell kann heruntergeladen und lokal (ohne Internet) ausgeführt werden.</li>
-        </ol>
-
-        <h2>Prompting</h2>
+        <h2 id="prompting">Prompting</h2>
         <h3>Reihenfolge beachten:</h3>
         <table>
             <thead>
@@ -236,12 +235,34 @@
             <br>
             Halte dich kurz, bringe es auf den Punkt
         </p>
+        <h2 id="glossary">Glossar</h2>
+            <ol>
+                <li><strong>Prompt:</strong> Anfrage an das KI-Modell</li>
+                <li><strong>Prompting:</strong> Schreiben einer Anfrage an ein KI-Modell</li>
+                <li><strong>Systemprompt:</strong> Vorgegebene Definition des KI-Modells (z.B. „Du bist ein hilfreiches moralisch richtig handelndes KI-Modell“)</li>
+                <li><strong>Halluzination:</strong> Erfindung von Informationen und Promptinhalten</li>
+                <li><strong>1 Token ≙</strong> 3 bis 4 Zeichen</li>
+                <li><strong>Reasoning:</strong> Ist das eigenständige Nachdenken des KI-Modells vor der Ausgabe der Nachricht an den Nutzer.</li>
+                <li><strong>Research:</strong> Recherche im Internet</li>
+                <li><strong>Open-Source:</strong> Quelloffen, Modell kann heruntergeladen und lokal (ohne Internet) ausgeführt werden.</li>
+            </ol>
         </div>
 
         <div id="content-en" class="lang-en">
         <h1>AI Models Overview</h1>
 
-        <h2>Providers</h2>
+        <h2>Table of Contents</h2>
+        <div class="toc">
+        <ul>
+            <li><a href="#providers-en">Providers</a></li>
+            <li><a href="#models-en">Models</a></li>
+            <li><a href="#categories-en">Categories</a></li>
+            <li><a href="#prompting-en">Prompting</a></li>
+            <li><a href="#glossary-en">Glossary</a></li>
+        </ul>
+        </div>
+
+        <h2 id="providers-en">Providers</h2>
         <table>
             <thead>
                 <tr>
@@ -351,7 +372,7 @@
             </tbody>
         </table>
 
-        <h2>Models</h2>
+        <h2 id="models-en">Models</h2>
         <table>
             <thead>
                 <tr>
@@ -383,7 +404,7 @@
             </tbody>
         </table>
 
-        <h2>Categories</h2>
+        <h2 id="categories-en">Categories</h2>
         <div style="width: 75%; margin: auto;">
             <canvas id="categoriesChartEn"></canvas>
         </div>
@@ -405,19 +426,7 @@
             </tbody>
         </table>
 
-        <h2>Glossary</h2>
-        <ol>
-            <li><strong>Prompt:</strong> Request to the AI model</li>
-            <li><strong>Prompting:</strong> Writing a request to an AI model</li>
-            <li><strong>System Prompt:</strong> Predefined definition of the AI model (e.g., "You are a helpful, morally correct AI model")</li>
-            <li><strong>Hallucination:</strong> Invention of information and prompt content</li>
-            <li><strong>1 Token ≙</strong> 3 to 4 characters</li>
-            <li><strong>Reasoning:</strong> The AI model's independent thinking before outputting the message to the user.</li>
-            <li><strong>Research:</strong> Searching the internet</li>
-            <li><strong>Open-Source:</strong> Source code is open, the model can be downloaded and run locally (without internet).</li>
-        </ol>
-
-        <h2>Prompting</h2>
+        <h2 id="prompting-en">Prompting</h2>
         <h3>Note the order:</h3>
         <table>
             <thead>
@@ -467,6 +476,17 @@
             <br>
             Keep it short, get to the point
         </p>
+        <h2 id="glossary-en">Glossary</h2>
+            <ol>
+                <li><strong>Prompt:</strong> Request to the AI model</li>
+                <li><strong>Prompting:</strong> Writing a request to an AI model</li>
+                <li><strong>System Prompt:</strong> Predefined definition of the AI model (e.g., "You are a helpful, morally correct AI model")</li>
+                <li><strong>Hallucination:</strong> Invention of information and prompt content</li>
+                <li><strong>1 Token ≙</strong> 3 to 4 characters</li>
+                <li><strong>Reasoning:</strong> The AI model's independent thinking before outputting the message to the user.</li>
+                <li><strong>Research:</strong> Searching the internet</li>
+                <li><strong>Open-Source:</strong> Source code is open, the model can be downloaded and run locally (without internet).</li>
+            </ol>
         </div>
     </div>
     <script src="script.js"></script>
