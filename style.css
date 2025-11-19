@@ -208,16 +208,24 @@ body.dark-mode .toc {
     border-left: 5px solid var(--primary-color);
 }
 
-/* Dark mode Link Styling */
-body.dark-mode a {
-    color: #64b5f6 !important;
+/* Link Styling - Same colors for both light and dark mode */
+a {
+    color: hwb(218 15% 2%) !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+a:hover {
+    color: hwb(218 15% 2%) !important;
+    text-decoration: underline;
+}
+
+body.dark-mode a {
+    color: #64b5f6 !important;
+}
+
 body.dark-mode a:hover {
     color: #90caf9 !important;
-    text-decoration: underline;
 }
 
 body.dark-mode .toc ul li a {
@@ -259,12 +267,175 @@ p {
 
 .toc ul li a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: hwb(218 15% 2%) !important;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .toc ul li a:hover {
-    color: #333;
+    color: hwb(218 15% 2%) !important;
     text-decoration: underline;
+}
+
+/* Chart Controls - Matching Website Style */
+.chart-controls {
+    background: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.sort-controls label {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+/* Clean Select Styling */
+.sort-controls select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    position: relative;
+    min-width: 180px;
+}
+
+.sort-controls select:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sort-controls select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Clean Button Styling */
+.sort-controls button {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-width: 120px;
+}
+
+.sort-controls button:hover {
+    background: #357abd;
+    border-color: #357abd;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.sort-controls button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove emoji icons for cleaner look */
+.sort-controls button .icon {
+    display: none;
+}
+
+.sort-controls button .text {
+    display: inline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sort-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .sort-controls label {
+        min-width: auto;
+    }
+    
+    .sort-controls select,
+    .sort-controls button {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .chart-controls {
+        padding: 15px;
+    }
+}
+
+/* Dark mode support for chart controls */
+body.dark-mode .chart-controls {
+    background: var(--secondary-color);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .sort-controls select {
+    background: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .sort-controls button {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .sort-controls button:hover {
+    background: #9c7cc7;
+    border-color: #9c7cc7;
+}
+
+/* Animation for chart updates */
+.chart-container {
+    transition: all 0.3s ease-in-out;
+}
+
+.chart-container.updating {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sort-controls button.loading {
+    animation: pulse 1.s infinite;
 }

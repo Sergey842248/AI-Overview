@@ -111,8 +111,8 @@
                     <td>• Begrenztes Logikverständnis</td>
                 </tr>
                 <tr>
-                    <td>kimi.com</td>
-                    <td><a href="https://kimi.com">kimi.com</a></td>
+                    <td>Kimi</td>
+                    <td><a href="https://kimi.com">Kimi</a></td>
                     <td>• Größtenteils kostenlos<br>• Gutes Reasoning<br>• Sehr gutes gratis KI-Modell</td>
                     <td>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
                 </tr>
@@ -123,8 +123,8 @@
                     <td>• Interface größtenteils nur auf Chinesisch<br>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
                 </tr>
                 <tr>
-                    <td>Hugging&nbsp;Face</td>
-                    <td><a href="https://huggingface.co/spaces">Hugging&nbsp;Face</a></td>
+                    <td>Hugging Face</td>
+                    <td><a href="https://huggingface.co/spaces">Hugging Face</a></td>
                     <td>• Große Auswahl an Open-Source-Modellen<br>• Community-getrieben</td>
                     <td>• Qualität der Modelle kann stark variieren</td>
                 </tr>
@@ -156,11 +156,11 @@
                 <tr><td>Qwen3-VL-235B-A22B</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Visuelles Verständnis</td></tr>
                 <tr><td>Qwen3-Coder</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Programmierung</td></tr>
                 <tr><td>Qwen2.5-Max</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Aktives Reasoning</td></tr>
-                <tr><td>MiniMax M2</td><td><a href="https://chat.minimax.io">MiniMax</a></td><td>• Viel Kontext </br> • Gutes Reasoning</td></tr>
+                <tr><td>MiniMax M2</td><td><a href="https://chat.minimax.io">MiniMax</a></td><td>• Viel Kontext <br> • Gutes Reasoning</td></tr>
                 <tr><td>Grok 3</td><td><a href="https://grok.com">Grok</a></td><td>• Schnelle Antworten</td></tr>
                 <tr><td>Grok 4 Fast</td><td><a href="https://scira.ai">Scira</a></td><td>• Schnelle Antworten</td></tr>
                 <tr><td>Qwen3 4B Thinking</td><td><a href="https://scira.ai">Scira</a></td><td>• Reasoning</td></tr>
-                <tr><td>Kimi K2</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Reasoning </br>• Sehr gute Logik</td></tr>
+                <tr><td>Kimi K2</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Reasoning <br>• Sehr gute Logik</td></tr>
                 <tr><td>GPT-OSS-120B</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Sehr nah an GPT-5</td></tr>
                 <tr><td>Llama 4</td><td><a href="https://huggingface.co/spaces">Hugging Face</a></td><td>• Leistungsstarkes Open-Source-Modell</td></tr>
                 <tr><td>Command R+</td><td><a href="https://dashboard.cohere.com/playground/chat">Cohere</a></td><td>• Optimiert für Unternehmens-Workflows</td></tr>
@@ -168,7 +168,24 @@
         </table>
 
         <h2 id="categories">Kategorien</h2>
-        <div style="width: 75%; margin: auto;">
+        <div class="chart-controls">
+            <div class="sort-controls">
+                <label for="sort-category-de">
+                    <i class="icon">📊</i> Sortieren nach:
+                </label>
+                <select id="sort-category-de">
+                    <option value="gesamt" selected>📈 Gesamtbewertung</option>
+                    <option value="userexperience">👤 Benutzerfreundlichkeit</option>
+                    <option value="modell_schlauheit">🧠 Modell-Intelligenz</option>
+                    <option value="upload_möglichkeiten">📤 Upload-Möglichkeiten</option>
+                </select>
+                <button id="sort-direction-de" class="sort-button">
+                    <span class="icon">↗️</span>
+                    <span class="text">Absteigend</span>
+                </button>
+            </div>
+        </div>
+        <div style="width: 75%; margin: auto;" class="chart-container">
             <canvas id="categoriesChartDe"></canvas>
         </div>
         <table>
@@ -350,7 +367,7 @@
                     <td>• Limited logic understanding</td>
                 </tr>
                 <tr>
-                    <td>kimi.com</td>
+                    <td>Kimi</td>
                     <td><a href="https://kimi.com">Kimi</a></td>
                     <td>• Mostly free<br>• Good reasoning<br>• Very good free AI model</td>
                     <td>• China-friendly (worse for non-Chinese history and geography)</td>
@@ -362,7 +379,7 @@
                     <td>• Interface mostly only in Chinese<br>• China-friendly (worse for non-Chinese history and geography)</td>
                 </tr>
                 <tr>
-                    <td>Hugging&nbsp;Face</td>
+                    <td>Hugging Face</td>
                     <td><a href="https://huggingface.co/spaces">Hugging Face</a></td>
                     <td>• Wide range of open-source models<br>• Community-driven</td>
                     <td>• Quality of models can vary heavily</td>
@@ -409,7 +426,24 @@
         </table>
 
         <h2 id="categories-en">Categories</h2>
-        <div style="width: 75%; margin: auto;">
+        <div class="chart-controls">
+            <div class="sort-controls">
+                <label for="sort-category-en">
+                    <i class="icon">📊</i> Sort by:
+                </label>
+                <select id="sort-category-en">
+                    <option value="gesamt" selected>📈 Overall Rating</option>
+                    <option value="userexperience">👤 User Experience</option>
+                    <option value="modell_schlauheit">🧠 Model Intelligence</option>
+                    <option value="upload_möglichkeiten">📤 Upload Options</option>
+                </select>
+                <button id="sort-direction-en" class="sort-button">
+                    <span class="icon">↗️</span>
+                    <span class="text">Descending</span>
+                </button>
+            </div>
+        </div>
+        <div style="width: 75%; margin: auto;" class="chart-container">
             <canvas id="categoriesChartEn"></canvas>
         </div>
         <table>
@@ -495,7 +529,7 @@
     </div>
     <script src="script.js"></script>
     <footer style="text-align: center; padding: 5px 0;">
-        v1.0.0 • Made with ❤️
+        v1.0.0 • Made with ❤️ by <a href="https://github.com/Sergey842248">Parsa</a>
     </footer>
 </body>
 </html>
