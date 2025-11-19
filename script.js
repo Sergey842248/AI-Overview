@@ -60,6 +60,16 @@ themeSwitcher.addEventListener('change', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
+
+    // Add data-labels to table cells for responsive view
+    document.querySelectorAll('table').forEach(table => {
+        const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent);
+        table.querySelectorAll('tbody tr').forEach(row => {
+            row.querySelectorAll('td').forEach((td, i) => {
+                td.setAttribute('data-label', headers[i]);
+            });
+        });
+    });
 });
 
 // Bewertung der Anbieter nach verschiedenen Kriterien (Skala 1-10)
