@@ -257,17 +257,88 @@
             Halte dich kurz, bringe es auf den Punkt
         </p>
         <h2 id="glossary">Glossar</h2>
-            <ol>
-                <li><strong>Prompt:</strong> Anfrage an das KI-Modell</li>
-                <li><strong>Prompting:</strong> Schreiben einer Anfrage an ein KI-Modell</li>
-                <li><strong>Systemprompt:</strong> Vorgegebene Definition des KI-Modells (z.B. „Du bist ein hilfreiches moralisch richtig handelndes KI-Modell")</li>
-                <li><strong>Halluzination:</strong> Erfindung von Informationen und Promptinhalten</li>
-                <li><strong>1 Token ≙</strong> 3 bis 4 Zeichen</li>
-                <li><strong>Reasoning:</strong> Ist das eigenständige Nachdenken des KI-Modells vor der Ausgabe der Nachricht an den Nutzer.</li>
-                <li><strong>Research:</strong> Recherche im Internet</li>
-                <li><strong>Open-Source:</strong> Quelloffen, Modell kann heruntergeladen und lokal (ohne Internet) ausgeführt werden.</li>
-            </ol>
+        <input type="text" id="glossary-search-de" placeholder="Glossar durchsuchen...">
+        <div class="glossary-container">
+            <div class="glossary-item">
+                <button class="glossary-term">Prompt</button>
+                <div class="glossary-definition">
+                    <p>Eine spezifische Anweisung oder Frage, die an ein KI-Modell gestellt wird, um eine Antwort oder eine bestimmte Ausgabe zu erhalten.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Prompting</button>
+                <div class="glossary-definition">
+                    <p>Der Prozess des Entwerfens und Formulierens von Prompts, um die gewünschten Ergebnisse von einem KI-Modell zu erzielen. Gutes Prompting ist entscheidend für die Qualität der KI-Antworten.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Systemprompt</button>
+                <div class="glossary-definition">
+                    <p>Eine vordefinierte Anweisung, die das Verhalten eines KI-Modells für eine gesamte Konversation festlegt (z.B. „Du bist ein hilfreicher Assistent, der immer höflich und präzise antwortet“).</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Halluzination</button>
+                <div class="glossary-definition">
+                    <p>Wenn ein KI-Modell falsche oder irreführende Informationen generiert, die nicht auf den Trainingsdaten basieren, und diese als Fakten darstellt.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Token(s)</button>
+                <div class="glossary-definition">
+                    <p>Die kleinsten Einheiten, in die ein Text von einem KI-Modell zerlegt wird. Ein Token entspricht ungefähr 3 bis 4 Zeichen und ist die Basis für die Verarbeitung von Sprache.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Reasoning</button>
+                <div class="glossary-definition">
+                    <p>Die Fähigkeit eines KI-Modells, logische Schlussfolgerungen zu ziehen, Probleme zu lösen und komplexe Zusammenhänge zu verstehen. Dies ist ein Maß für die "Intelligenz" des Modells.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Research</button>
+                <div class="glossary-definition">
+                    <p>Die Fähigkeit eines KI-Modells, Informationen aus dem Internet oder einer Datenbank zu suchen, zu analysieren und zusammenzufassen, um Fragen zu beantworten.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Open-Source</button>
+                <div class="glossary-definition">
+                    <p>Bezieht sich auf Software oder Modelle, deren Quellcode öffentlich zugänglich ist. Jeder kann ihn einsehen, verändern und weiterverbreiten.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Modell</button>
+                <div class="glossary-definition">
+                    <p>Ein künstliches neuronales Netzwerk, das darauf trainiert wurde, bestimmte Aufgaben wie Texterstellung, Übersetzung oder Bilderkennung auszuführen.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">LLM (Large Language Model)</button>
+                <div class="glossary-definition">
+                    <p>Ein sehr großes und komplexes Sprachmodell, das auf riesigen Datenmengen trainiert wurde, um menschenähnliche Texte zu verstehen und zu generieren.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Kontextfenster</button>
+                <div class="glossary-definition">
+                    <p>Die maximale Anzahl an Tokens, die ein KI-Modell bei der Verarbeitung einer Anfrage berücksichtigen kann. Ein größeres Kontextfenster ermöglicht es dem Modell, längere Gespräche oder Dokumente zu verstehen.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Feinabstimmung (Fine-tuning)</button>
+                <div class="glossary-definition">
+                    <p>Der Prozess, bei dem ein vortrainiertes KI-Modell mit einem spezifischeren Datensatz weiter trainiert wird, um seine Leistung für eine bestimmte Aufgabe zu verbessern.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Inferenz</button>
+                <div class="glossary-definition">
+                    <p>Der Prozess, bei dem ein trainiertes KI-Modell neue, unbekannte Daten analysiert, um eine Vorhersage oder Entscheidung zu treffen.</p>
+                </div>
+            </div>
         </div>
+    </div>
 
         <div id="content-en" class="lang-en">
         <h1>AI Models Overview</h1>
@@ -515,17 +586,88 @@
             Keep it short, get to the point
         </p>
         <h2 id="glossary-en">Glossary</h2>
-            <ol>
-                <li><strong>Prompt:</strong> Request to the AI model</li>
-                <li><strong>Prompting:</strong> Writing a request to an AI model</li>
-                <li><strong>System Prompt:</strong> Predefined definition of the AI model (e.g., "You are a helpful, morally correct AI model")</li>
-                <li><strong>Hallucination:</strong> Invention of information and prompt content</li>
-                <li><strong>1 Token ≙</strong> 3 to 4 characters</li>
-                <li><strong>Reasoning:</strong> The AI model's independent thinking before outputting the message to the user.</li>
-                <li><strong>Research:</strong> Searching the internet</li>
-                <li><strong>Open-Source:</strong> Source code is open, the model can be downloaded and run locally (without internet).</li>
-            </ol>
+        <input type="text" id="glossary-search-en" placeholder="Search glossary...">
+        <div class="glossary-container">
+            <div class="glossary-item">
+                <button class="glossary-term">Prompt</button>
+                <div class="glossary-definition">
+                    <p>A specific instruction or question given to an AI model to get a response or a specific output.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Prompting</button>
+                <div class="glossary-definition">
+                    <p>The process of designing and formulating prompts to achieve the desired results from an AI model. Good prompting is crucial for the quality of the AI's answers.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">System Prompt</button>
+                <div class="glossary-definition">
+                    <p>A predefined instruction that sets the behavior of an AI model for an entire conversation (e.g., "You are a helpful assistant who always responds politely and accurately").</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Hallucination</button>
+                <div class="glossary-definition">
+                    <p>When an AI model generates false or misleading information that is not based on its training data and presents it as fact.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Token(s)</button>
+                <div class="glossary-definition">
+                    <p>The smallest units into which a text is broken down by an AI model. One token corresponds to about 3 to 4 characters and is the basis for language processing.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Reasoning</button>
+                <div class="glossary-definition">
+                    <p>The ability of an AI model to draw logical conclusions, solve problems, and understand complex relationships. This is a measure of the model's "intelligence."</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Research</button>
+                <div class="glossary-definition">
+                    <p>The ability of an AI model to search, analyze, and summarize information from the internet or a database to answer questions.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Open-Source</button>
+                <div class="glossary-definition">
+                    <p>Refers to software or models whose source code is publicly available. Anyone can view, modify, and distribute it.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Model</button>
+                <div class="glossary-definition">
+                    <p>An artificial neural network that has been trained to perform specific tasks such as text generation, translation, or image recognition.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">LLM (Large Language Model)</button>
+                <div class="glossary-definition">
+                    <p>A very large and complex language model that has been trained on huge amounts of data to understand and generate human-like text.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Context Window</button>
+                <div class="glossary-definition">
+                    <p>The maximum number of tokens an AI model can consider when processing a request. A larger context window allows the model to understand longer conversations or documents.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Fine-tuning</button>
+                <div class="glossary-definition">
+                    <p>The process of further training a pre-trained AI model with a more specific dataset to improve its performance on a particular task.</p>
+                </div>
+            </div>
+            <div class="glossary-item">
+                <button class="glossary-term">Inference</button>
+                <div class="glossary-definition">
+                    <p>The process by which a trained AI model analyzes new, unknown data to make a prediction or decision.</p>
+                </div>
+            </div>
         </div>
+    </div>
     </div>
     <script src="script.js"></script>
     <footer style="text-align: center; padding: 5px 0;">

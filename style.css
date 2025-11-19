@@ -33,28 +33,63 @@ h1 {
     margin-bottom: 40px;
 }
 table {
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
-    border-collapse: collapse;
     margin-bottom: 30px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
 th, td {
-    border: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding: 12px 15px;
     text-align: left;
+}
+th {
+    border-right: 1px solid var(--border-color);
+}
+td {
+    border-right: 1px solid var(--border-color);
+}
+th:last-child, td:last-child {
+    border-right: none;
+}
+tr:last-child td, tr:last-child th {
+    border-bottom: none;
 }
 th {
     background-color: var(--header-bg);
     color: var(--header-text);
     font-weight: 600;
 }
+th:first-child {
+    border-top-left-radius: 8px;
+}
+th:last-child {
+    border-top-right-radius: 8px;
+}
+tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 tr:hover {
-    background-color: #f1f1f1;
     transform: scale(1.02);
     transition: transform 0.2s ease-in-out;
+}
+tr:hover td {
+    background-color: #f1f1f1;
+}
+tr:hover td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+tr:hover td:last-child {
+    border-radius: 0 8px 8px 0;
 }
 
 @keyframes fadeIn {
@@ -194,7 +229,7 @@ body.dark-mode tr:nth-child(even) {
     background-color: #2c2c2c;
 }
 
-body.dark-mode tr:hover {
+body.dark-mode tr:hover td {
     background-color: #3c3c3c;
 }
 
@@ -438,4 +473,92 @@ body.dark-mode .sort-controls button:hover {
 
 .sort-controls button.loading {
     animation: pulse 1.s infinite;
+}
+
+/* Glossary Styling */
+#glossary-search-de, #glossary-search-en {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.glossary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.glossary-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.glossary-term {
+    width: 100%;
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.glossary-term:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.glossary-definition {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.glossary-definition p {
+    margin: 15px 0;
+}
+
+.glossary-item.active .glossary-term {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.glossary-item.active .glossary-definition {
+    max-height: 200px; /* Adjust as needed */
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+}
+
+body.dark-mode .glossary-term {
+    background-color: #2c2c2c;
+    color: var(--text-color);
+}
+
+body.dark-mode .glossary-item.active .glossary-term,
+body.dark-mode .glossary-term:hover {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+}
+
+body.dark-mode .glossary-definition p {
+    background-color: #1e1e1e;
+    color: var(--text-color);
+    border-left: 5px solid var(--primary-color);
+}
+
+body.dark-mode #glossary-search-de,
+body.dark-mode #glossary-search-en {
+    background-color: #2c2c2c;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
 }

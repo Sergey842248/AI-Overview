@@ -563,3 +563,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Glossary
+document.querySelectorAll('.glossary-term').forEach(button => {
+    button.addEventListener('click', () => {
+        const glossaryItem = button.parentElement;
+        glossaryItem.classList.toggle('active');
+    });
+});
+
+function filterGlossary(searchTerm, lang) {
+    const glossaryItems = document.querySelectorAll(`#content-${lang} .glossary-item`);
+    glossaryItems.forEach(item => {
+        const term = item.querySelector('.glossary-term');
+        const definition = item.querySelector('.glossary-definition');
+        const termText = term.textContent.toLowerCase();
+        const definitionText = definition.textContent.toLowerCase();
+
+        // Remove previous highlights
+        term.innerHTML = term.textContent;
+        definition.innerHTML = definition.textContent;
+
+        if (searchTerm === '') {
+            item.style.display = 'block';
+            item.classList.remove('active');
+            return;
+        }
+
+        if (termText.includes(searchTerm) || definitionText.includes(searchTerm)) {
+            item.style.display = 'block';
+            item.classList.add('active');
+
+            // Highlight search term
+            const regex = new RegExp(searchTerm, 'gi');
+            term.innerHTML = term.textContent.replace(regex, `<span class="highlight">$&</span>`);
+            definition.innerHTML = definition.textContent.replace(regex, `<span class="highlight">$&</span>`);
+        } else {
+            item.style.display = 'none';
+            item.classList.remove('active');
+        }
+    });
+}
+
+document.getElementById('glossary-search-de').addEventListener('input', (e) => {
+    filterGlossary(e.target.value.toLowerCase(), 'de');
+});
+
+document.getElementById('glossary-search-en').addEventListener('input', (e) => {
+    filterGlossary(e.target.value.toLowerCase(), 'en');
+});
