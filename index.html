@@ -5,90 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Models Overview</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f5f5f5;
-            --text-color: #333;
-            --border-color: #ddd;
-            --header-bg: #4a90e2;
-            --header-text: white;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 12px 15px;
-            text-align: left;
-        }
-        th {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            font-weight: 600;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        .lang-en {
-            display: none;
-        }
-        #lang-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: background-color 0.3s;
-        }
-        #lang-switcher:hover {
-            background-color: #357abd;
-        }
-        p {
-            background: #eef;
-            padding: 15px;
-            border-left: 5px solid var(--primary-color);
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <button id="lang-switcher">Switch to English</button>
@@ -109,87 +26,98 @@
             <tbody>
                 <tr>
                     <td>ChatGPT</td>
-                    <td>chatgpt.com</td>
+                    <td><a href="https://chatgpt.com">ChatGPT</a></td>
                     <td>• Allrounder<br>• Sehr gutes Reasoning</td>
                     <td>• Halluziniert oft<br>• Gutes Prompting nötig</td>
                 </tr>
                 <tr>
                     <td>Claude</td>
-                    <td>claude.ai</td>
+                    <td><a href="https://claude.ai">Claude</a></td>
                     <td>• Gutes Kontextverständnis</td>
                     <td>• Begrenzte Nutzung</td>
                 </tr>
                 <tr>
                     <td>Gemini</td>
-                    <td>gemini.google.com</td>
+                    <td><a href="https://gemini.google.com">Gemini</a></td>
                     <td>• Mittelmäßig für alle Bereiche<br>• Gutes Researching<br>• Bildgenerierung möglich</td>
                     <td>• Nur mittelmäßig gut in allen Bereichen</td>
                 </tr>
                 <tr>
                     <td>Perplexity</td>
-                    <td>perplexity.ai</td>
+                    <td><a href="https://perplexity.ai">Perplexity</a></td>
                     <td>• Sehr gutes Researching</td>
                     <td>• Kaum logisches Denken</td>
                 </tr>
                 <tr>
                     <td>Qwen</td>
-                    <td>chat.qwen.ai</td>
+                    <td><a href="https://chat.qwen.ai">Qwen</a></td>
                     <td>• Komplett kostenlos<br>• Unendliche Anfragen<br>• Gute Reasoning-Modelle<br>• Breite Auswahl an Modellen<br>• KI-Modelle parallellaufend (Vergleich zwischen KI-Modellen)</td>
                     <td>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
                 </tr>
                 <tr>
                     <td>MiniMax</td>
-                    <td>chat.minimax.io</td>
+                    <td><a href="https://chat.minimax.io">MiniMax</a></td>
                     <td>• Sehr hohes Tokenverständnis (1 Mio. Tokens)</td>
-                    <td>• Schlechteres Reasoning und Research, als bei anderen Modellen</td>
                 </tr>
                 <tr>
                     <td>Grok</td>
-                    <td>grok.com</td>
+                    <td><a href="https://grok.com">Grok</a></td>
                     <td>• Zugriff auf X (ehemals Twitter)-Posts<br>• Sehr aktuell<br>• Gut für Foren</td>
                     <td>• Nutzt X (ehemals Twitter) Posts → Hohe Fehleranfälligkeit</td>
                 </tr>
                 <tr>
                     <td>Scira</td>
-                    <td>scira.ai</td>
-                    <td>• Kostenlose Auswahl zwischen guten KI-Modellen<br>• Hohe Auswahl von Research-Anbietern</td>
+                    <td><a href="https://scira.ai">Scira</a></td>
+                    <td>• Kostenlose Auswahl zwischen guten KI-Modellen<br>• Hohe Auswahl von Research-Methoden</td>
                     <td>• Viele KI-Modelle kostenpflichtig</td>
                 </tr>
                  <tr>
                     <td>Groq</td>
-                    <td>chat.groq.com</td>
+                    <td><a href="https://chat.groq.com">Groq</a></td>
                     <td>• Viele sehr gute KI-Modelle zur Auswahl</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Groq console</td>
-                    <td>console.groq.com/playground</td>
+                    <td><a href="https://console.groq.com/playground">Groq console</a></td>
                     <td>• Systemprompt anpassbar<br>• Viele KI-Modelle zur Auswahl</td>
                     <td>• Professionelles Layout, kann verwirrend sein</td>
                 </tr>
                 <tr>
                     <td>DeepSeek</td>
-                    <td>chat.deepseek.com</td>
+                    <td><a href="https://chat.deepseek.com">DeepSeek</a></td>
                     <td>• Unendlich Anfragen<br>• Komplett kostenlos<br>• Reasoning</td>
                     <td>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)<br>• Keine spezifische Modellauswahl</td>
                 </tr>
                 <tr>
                     <td>Mistral</td>
-                    <td>chat.mistral.ai</td>
+                    <td><a href="https://chat.mistral.ai">Mistral</a></td>
                     <td>• Gutes Geschichtsverständnis<br>• Gutes Geografieverständnis</td>
                     <td>• Begrenztes Logikverständnis</td>
                 </tr>
                 <tr>
                     <td>kimi.com</td>
-                    <td>kimi.com</td>
+                    <td><a href="https://kimi.com">kimi.com</a></td>
                     <td>• Größtenteils kostenlos<br>• Gutes Reasoning<br>• Sehr gutes gratis KI-Modell</td>
                     <td>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
                 </tr>
                 <tr>
                     <td>ChatGLM</td>
-                    <td>chatglm.cn</td>
+                    <td><a href="https://chatglm.cn">ChatGLM</a></td>
                     <td>• Tiefes Reasoning<br>• Gutes Logikverständnis</td>
                     <td>• Interface größtenteils nur auf Chinesisch<br>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
+                </tr>
+                <tr>
+                    <td>Hugging&nbsp;Face</td>
+                    <td><a href="https://huggingface.co/spaces">Hugging&nbsp;Face</a></td>
+                    <td>• Große Auswahl an Open-Source-Modellen<br>• Community-getrieben</td>
+                    <td>• Qualität der Modelle kann stark variieren</td>
+                </tr>
+                <tr>
+                    <td>Cohere</td>
+                    <td><a href="https://cohere.com">Cohere</a></td>
+                    <td>• Fokus auf Unternehmensanwendungen<br>• Starke Textgenerierungs- und Klassifizierungsfähigkeiten</td>
+                    <td>• Weniger für den allgemeinen Gebrauch bekannt</td>
                 </tr>
             </tbody>
         </table>
@@ -204,24 +132,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>GPT-5</td><td>chatgpt.com</td><td>• Allrounder<br>• Reasoning</td></tr>
-                <tr><td>Claude Sonnet 4.5</td><td>claude.ai</td><td>• Kontextverständnis<br>• Tiefes (sehr starkes) Reasoning</td></tr>
-                <tr><td>Claude Haiku 4.5</td><td>claude.ai</td><td>• Kontextverständnis<br>• Schnelle Antworten</td></tr>
-                <tr><td>2.5 Flash</td><td>gemini.google.com</td><td>• Schnelle Antworten</td></tr>
-                <tr><td>2.5 Pro</td><td>gemini.google.com</td><td>• Reasoning</td></tr>
-                <tr><td>Qwen3-Max</td><td>chat.qwen.ai</td><td>• Allrounder<br>• Komplexe Aufgaben</td></tr>
-                <tr><td>Qwen3-VL-235B-A22B</td><td>chat.qwen.ai</td><td>• Visuelles Verständnis</td></tr>
-                <tr><td>Qwen3-Coder</td><td>chat.qwen.ai</td><td>• Programmierung</td></tr>
-                <tr><td>Qwen2.5-Max</td><td>chat.qwen.ai</td><td>• Aktives Reasoning</td></tr>
-                <tr><td>MiniMax-01</td><td>chat.minimax.io</td><td>• Viel Kontext</td></tr>
-                <tr><td>Grok 3</td><td>grok.com</td><td>• Schnelle Antworten</td></tr>
-                <tr><td>Grok 4</td><td>grok.com</td><td>• Langes und tiefes Reasoning</td></tr>
-                <tr><td>Grok 4 Fast</td><td>scira.ai</td><td>• Schnelle Antworten</td></tr>
-                <tr><td>Qwen3 4B Thinking</td><td>scira.ai</td><td>• Reasoning</td></tr>
-                <tr><td>Llama 4</td><td>chat.groq.com</td><td>• Open-Source</td></tr>
-                <tr><td>Kimi K2</td><td>chat.groq.com</td><td>• Reasoning</td></tr>
-                <tr><td>GPT-OSS-120B</td><td>chat.groq.com</td><td>• Sehr nah an GPT-5</td></tr>
-                <tr><td>Kimi K2</td><td>kimi.com</td><td>• Sehr gute Logik</td></tr>
+                <tr><td>GPT-5</td><td><a href="https://claude.ai">Claude</a></td><td>• Allrounder<br>• Reasoning</td></tr>
+                <tr><td>Claude Sonnet 4.5</td><td><a href="https://claude.ai">Claude</a></td><td>• Kontextverständnis<br>• Tiefes (sehr starkes) Reasoning</td></tr>
+                <tr><td>Claude Haiku 4.5</td><td><a href="https://claude.ai">Claude</a></td><td>• Kontextverständnis<br>• Schnelle Antworten</td></tr>
+                <tr><td>2.5 Flash</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• Schnelle Antworten</td></tr>
+                <tr><td>2.5 Pro</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• Reasoning</td></tr>
+                <tr><td>Qwen3-Max</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Allrounder<br>• Komplexe Aufgaben</td></tr>
+                <tr><td>Qwen3-VL-235B-A22B</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Visuelles Verständnis</td></tr>
+                <tr><td>Qwen3-Coder</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Programmierung</td></tr>
+                <tr><td>Qwen2.5-Max</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Aktives Reasoning</td></tr>
+                <tr><td>MiniMax M2</td><td><a href="https://chat.minimax.io">MiniMax</a></td><td>• Viel Kontext </br> • Gutes Reasoning</td></tr>
+                <tr><td>Grok 3</td><td><a href="https://grok.com">Grok</a></td><td>• Schnelle Antworten</td></tr>
+                <tr><td>Grok 4 Fast</td><td><a href="https://scira.ai">Scira</a></td><td>• Schnelle Antworten</td></tr>
+                <tr><td>Qwen3 4B Thinking</td><td><a href="https://scira.ai">Scira</a></td><td>• Reasoning</td></tr>
+                <tr><td>Kimi K2</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Reasoning </br>• Sehr gute Logik</td></tr>
+                <tr><td>GPT-OSS-120B</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Sehr nah an GPT-5</td></tr>
+                <tr><td>Llama 4</td><td><a href="https://huggingface.co/spaces">Hugging Face</a></td><td>• Leistungsstarkes Open-Source-Modell</td></tr>
+                <tr><td>Command R+</td><td><a href="https://dashboard.cohere.com/playground/chat">Cohere</a></td><td>• Optimiert für Unternehmens-Workflows</td></tr>
             </tbody>
         </table>
 
@@ -237,11 +164,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Kontextverständnis</td><td>• Claude (claude.ai)<br>• MiniMax (chat.minimax.io)</td></tr>
-                <tr><td>Research</td><td>• Perplexity (perplexity.ai)<br>• Scira (scira.ai)</td></tr>
-                <tr><td>Reasoning</td><td>• Grok (xAI) (grok.com)<br>• ChatGPT (chatgpt.com)</td></tr>
-                <tr><td>Visuelles Verständnis</td><td>• Qwen (chat.qwen.ai (Modell: Qwen3-VL-235B-A22B))</td></tr>
-                <tr><td>Anpassbarkeit (Im Bezug auf Prompting)</td><td>• Groq console (console.groq.com/playground)</td></tr>
+                <tr><td>Kontextverständnis</td><td>• <a href="https://claude.ai">Claude (Modell: Claude Sonnet 4.5)</a><br>• <a href="https://chat.minimax.io">MiniMax (Modell: MiniMax M2)</a></td></tr>
+                <tr><td>Research</td><td>• <a href="https://perplexity.ai">Perplexity</a><br>• <a href="https://scira.ai">Scira</a></td></tr>
+                <tr><td>Reasoning</td><td>• <a href="https://claude.ai">Claude (Modell: Sonnet 4.5)</a><br>• <a href="https://chatgpt.com">GPT-5</a></td></tr>
+                <tr><td>Visuelles Verständnis</td><td>• <a href="https://chat.qwen.ai">Qwen (Modell: Qwen3-VL-235B-A22B)</a></td></tr>
+                <tr><td>Anpassbarkeit (Im Bezug auf Prompting)</td><td>• <a href="https://console.groq.com/playground">Groq console</a></td></tr>
+                <tr><td>Open-Source</td><td>• <a href="https://huggingface.co/spaces">Hugging Face</a></td></tr>
+                <tr><td>Unternehmensanwendungen</td><td>• <a href="https://cohere.com">Cohere</a></td></tr>
             </tbody>
         </table>
 
@@ -325,87 +254,99 @@
             <tbody>
                 <tr>
                     <td>ChatGPT</td>
-                    <td>chatgpt.com</td>
+                    <td><a href="https://chatgpt.com">ChatGPT</a></td>
                     <td>• All-rounder<br>• Very good reasoning</td>
                     <td>• Often hallucinates<br>• Good prompting necessary</td>
                 </tr>
                 <tr>
                     <td>Claude</td>
-                    <td>claude.ai</td>
+                    <td><a href="https://claude.ai">Claude</a></td>
                     <td>• Good context understanding</td>
                     <td>• Limited usage</td>
                 </tr>
                 <tr>
                     <td>Gemini</td>
-                    <td>gemini.google.com</td>
+                    <td><a href="https://gemini.google.com">Gemini</a></td>
                     <td>• Moderate for all areas<br>• Good researching<br>• Image generation possible</td>
                     <td>• Only moderately good in all areas</td>
                 </tr>
                 <tr>
                     <td>Perplexity</td>
-                    <td>perplexity.ai</td>
+                    <td><a href="https://perplexity.ai">Perplexity</a></td>
                     <td>• Very good researching</td>
                     <td>• Hardly any logical thinking</td>
                 </tr>
                 <tr>
                     <td>Qwen</td>
-                    <td>chat.qwen.ai</td>
+                    <td><a href="https://chat.qwen.ai">Qwen</a></td>
                     <td>• Completely free<br>• Unlimited requests<br>• Good reasoning models<br>• Wide selection of models<br>• AI models running in parallel (comparison between AI models)</td>
                     <td>• China-friendly (worse for non-Chinese history and geography)</td>
                 </tr>
                 <tr>
                     <td>MiniMax</td>
-                    <td>chat.minimax.io</td>
+                    <td><a href="https://chat.minimax.io">MiniMax</a></td>
                     <td>• Very high token understanding (1 million tokens)</td>
                     <td>• Worse reasoning and research than other models</td>
                 </tr>
                 <tr>
                     <td>Grok</td>
-                    <td>grok.com</td>
+                    <td><a href="https://grok.com">Grok</a></td>
                     <td>• Access to X (formerly Twitter) posts<br>• Very up-to-date<br>• Good for forums</td>
                     <td>• Uses X (formerly Twitter) posts → High susceptibility to errors</td>
                 </tr>
                 <tr>
                     <td>Scira</td>
-                    <td>scira.ai</td>
-                    <td>• Free choice between good AI models<br>• Wide selection of research providers</td>
+                    <td><a href="https://scira.ai">Scira</a></td>
+                    <td>• Free choice between good AI models<br>• Wide selection of research methods</td>
                     <td>• Many AI models are paid</td>
                 </tr>
                 <tr>
                     <td>Groq</td>
-                    <td>chat.groq.com</td>
+                    <td><a href="https://chat.groq.com">Groq</a></td>
                     <td>• Many very good AI models to choose from</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Groq console</td>
-                    <td>console.groq.com/playground</td>
+                    <td><a href="https://console.groq.com/playground">Groq console</a></td>
                     <td>• System prompt customizable<br>• Many AI models to choose from</td>
                     <td>• Professional layout, can be confusing</td>
                 </tr>
                 <tr>
                     <td>DeepSeek</td>
-                    <td>chat.deepseek.com</td>
+                    <td><a href="https://chat.deepseek.com">DeepSeek</a></td>
                     <td>• Unlimited requests<br>• Completely free<br>• Reasoning</td>
                     <td>• China-friendly (worse for non-Chinese history and geography)<br>• No specific model selection</td>
                 </tr>
                 <tr>
                     <td>Mistral</td>
-                    <td>chat.mistral.ai</td>
+                    <td><a href="https://chat.mistral.ai">Mistral</a></td>
                     <td>• Good history understanding<br>• Good geography understanding</td>
                     <td>• Limited logic understanding</td>
                 </tr>
                 <tr>
                     <td>kimi.com</td>
-                    <td>kimi.com</td>
+                    <td><a href="https://kimi.com">Kimi</a></td>
                     <td>• Mostly free<br>• Good reasoning<br>• Very good free AI model</td>
                     <td>• China-friendly (worse for non-Chinese history and geography)</td>
                 </tr>
                 <tr>
                     <td>ChatGLM</td>
-                    <td>chatglm.cn</td>
+                    <td><a href="https://chatglm.cn">ChatGLM</a></td>
                     <td>• Deep reasoning<br>• Good logic understanding</td>
                     <td>• Interface mostly only in Chinese<br>• China-friendly (worse for non-Chinese history and geography)</td>
+                </tr>
+                <tr>
+                    <td>Hugging&nbsp;Face</td>
+                    <td><a href="https://huggingface.co/spaces">Hugging&nbsp;Face</a></td>
+                    <td>• Wide range of open-source models<br>• Community-driven</td>
+                    <td>• Quality of models can vary heavily</td>
+                </tr>
+                <tr>
+                    <td>Cohere</td>
+                    <td><a href="https://cohere.com">Cohere</a></td>
+                    <td>• Focus on enterprise applications<br>• Strong text generation and classification capabilities</td>
+                    <td>• Less known for general use</td>
                 </tr>
             </tbody>
         </table>
@@ -420,24 +361,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>GPT-5</td><td>chatgpt.com</td><td>• All-rounder<br>• Reasoning</td></tr>
-                <tr><td>Claude Sonnet 4.5</td><td>claude.ai</td><td>• Context understanding<br>• Deep (very strong) Reasoning</td></tr>
-                <tr><td>Claude Haiku 4.5</td><td>claude.ai</td><td>• Context understanding<br>• Fast answers</td></tr>
-                <tr><td>2.5 Flash</td><td>gemini.google.com</td><td>• Fast answers</td></tr>
-                <tr><td>2.5 Pro</td><td>gemini.google.com</td><td>• Reasoning</td></tr>
-                <tr><td>Qwen3-Max</td><td>chat.qwen.ai</td><td>• All-rounder<br>• Complex tasks</td></tr>
-                <tr><td>Qwen3-VL-235B-A22B</td><td>chat.qwen.ai</td><td>• Visual understanding</td></tr>
-                <tr><td>Qwen3-Coder</td><td>chat.qwen.ai</td><td>• Programming</td></tr>
-                <tr><td>Qwen2.5-Max</td><td>chat.qwen.ai</td><td>• Active Reasoning</td></tr>
-                <tr><td>MiniMax-01</td><td>chat.minimax.io</td><td>• A lot of context</td></tr>
-                <tr><td>Grok 3</td><td>grok.com</td><td>• Fast answers</td></tr>
-                <tr><td>Grok 4</td><td>grok.com</td><td>• Long and deep reasoning</td></tr>
-                <tr><td>Grok 4 Fast</td><td>scira.ai</td><td>• Fast answers</td></tr>
-                <tr><td>Qwen3 4B Thinking</td><td>scira.ai</td><td>• Reasoning</td></tr>
-                <tr><td>Llama 4</td><td>chat.groq.com</td><td>• Open-Source</td></tr>
-                <tr><td>Kimi K2</td><td>chat.groq.com</td><td>• Reasoning</td></tr>
-                <tr><td>GPT-OSS-120B</td><td>chat.groq.com</td><td>• Very close to GPT-5</td></tr>
-                <tr><td>Kimi K2</td><td>kimi.com</td><td>• Very good logic</td></tr>
+                <tr><td>GPT-5</td><td><a href="https://chatgpt.com">ChatGPT</a></td><td>• All-rounder<br>• Reasoning</td></tr>
+                <tr><td>Claude Sonnet 4.5</td><td><a href="https://claude.ai">Claude</a></td><td>• Context understanding<br>• Deep (very strong) Reasoning</td></tr>
+                <tr><td>Claude Haiku 4.5</td><td><a href="https://claude.ai">Claude</a></td><td>• Context understanding<br>• Fast answers</td></tr>
+                <tr><td>2.5 Flash</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• Fast answers</td></tr>
+                <tr><td>2.5 Pro</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• Reasoning</td></tr>
+                <tr><td>Qwen3-Max</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• All-rounder<br>• Complex tasks</td></tr>
+                <tr><td>Qwen3-VL-235B-A22B</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Visual understanding</td></tr>
+                <tr><td>Qwen3-Coder</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Programming</td></tr>
+                <tr><td>Qwen2.5-Max</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Active Reasoning</td></tr>
+                <tr><td>MiniMax M2</td><td><a href="https://chat.minimax.io">MiniMax</a></td><td>• A lot of context</td></tr>
+                <tr><td>Grok 3</td><td><a href="https://grok.com">Grok</a></td><td>• Fast answers</td></tr>
+                <tr><td>Grok 4 Fast</td><td><a href="https://scira.ai">Scira</a></td><td>• Fast answers</td></tr>
+                <tr><td>Qwen3 4B Thinking</td><td><a href="https://scira.ai">Scira</a></td><td>• Reasoning</td></tr>
+                <tr><td>Llama 4</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Open-Source</td></tr>
+                <tr><td>Kimi K2</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Reasoning</td></tr>
+                <tr><td>GPT-OSS-120B</td><td><a href="https://chat.groq.com">Groq</a></td><td>• Very close to GPT-5</td></tr>
+                <tr><td>Kimi K2</td><td><a href="https://kimi.com">Kimi</a></td><td>• Very good logic</td></tr>
+                <tr><td>Llama 4</td><td><a href="https://huggingface.co/spaces">Hugging Face</a></td><td>• Powerful open-source model</td></tr>
+                <tr><td>Command R+</td><td><a href="https://cohere.com">Cohere</a></td><td>• Optimized for enterprise workflows</td></tr>
             </tbody>
         </table>
 
@@ -453,11 +395,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Context understanding</td><td>• Claude (claude.ai)<br>• MiniMax (chat.minimax.io)</td></tr>
-                <tr><td>Research</td><td>• Perplexity (perplexity.ai)<br>• Scira (scira.ai)</td></tr>
-                <tr><td>Reasoning</td><td>• Grok (xAI) (grok.com)<br>• ChatGPT (chatgpt.com)</td></tr>
-                <tr><td>Visual understanding</td><td>• Qwen (chat.qwen.ai (Model: Qwen3-VL-235B-A22B))</td></tr>
-                <tr><td>Customizability (In terms of prompting)</td><td>• Groq console (console.groq.com/playground)</td></tr>
+                <tr><td>Context understanding</td><td>• <a href="https://claude.ai">Claude (Model: Claude Sonnet 4.5)</a><br>• <a href="https://chat.minimax.io">MiniMax (Model: MiniMax M2)</a></td></tr>
+                <tr><td>Research</td><td>• <a href="https://perplexity.ai">Perplexity</a><br>• <a href="https://scira.ai">Scira</a></td></tr>
+                <tr><td>Reasoning</td><td>• <a href="https://claude.ai">Claude (Model: Sonnet 4.5)</a><br>• <a href="https://chatgpt.com">GPT-5</a></td></tr>
+                <tr><td>Visual understanding</td><td>• <a href="https://chat.qwen.ai">Qwen (Model: Qwen3-VL-235B-A22B)</a></td></tr>
+                <tr><td>Customizability (In terms of prompting)</td><td>• <a href="https://console.groq.com/playground">Groq console</a></td></tr>
+                <tr><td>Open-Source</td><td>• <a href="https://huggingface.co/spaces">Hugging Face</a></td></tr>
+                <tr><td>Enterprise Applications</td><td>• <a href="https://cohere.com">Cohere</a></td></tr>
             </tbody>
         </table>
 
@@ -525,100 +469,6 @@
         </p>
         </div>
     </div>
-    <script>
-        const switcher = document.getElementById('lang-switcher');
-        const contentDe = document.getElementById('content-de');
-        const contentEn = document.getElementById('content-en');
-        const htmlEl = document.documentElement;
-
-        let currentLang = 'de';
-
-        switcher.addEventListener('click', () => {
-            if (currentLang === 'de') {
-                contentDe.style.display = 'none';
-                contentEn.style.display = 'block';
-                switcher.textContent = 'Wechsle zu Deutsch';
-                htmlEl.setAttribute('lang', 'en');
-                currentLang = 'en';
-            } else {
-                contentDe.style.display = 'block';
-                contentEn.style.display = 'none';
-                switcher.textContent = 'Switch to English';
-                htmlEl.setAttribute('lang', 'de');
-                currentLang = 'de';
-            }
-        });
-
-        const categoriesDe = {
-            'Kontextverständnis': ['Claude', 'MiniMax'],
-            'Research': ['Perplexity', 'Scira'],
-            'Reasoning': ['Grok', 'ChatGPT'],
-            'Visuelles Verständnis': ['Qwen'],
-            'Anpassbarkeit': ['Groq console']
-        };
-
-        const categoriesEn = {
-            'Context understanding': ['Claude', 'MiniMax'],
-            'Research': ['Perplexity', 'Scira'],
-            'Reasoning': ['Grok', 'ChatGPT'],
-            'Visual understanding': ['Qwen'],
-            'Customizability': ['Groq console']
-        };
-
-        const chartColors = [
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-            'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)',
-            'rgba(153, 102, 255, 0.6)'
-        ];
-
-        function createChart(canvasId, chartTitle, data) {
-            const ctx = document.getElementById(canvasId).getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: Object.keys(data),
-                    datasets: [{
-                        label: chartTitle,
-                        data: Object.values(data).map(arr => arr.length),
-                        backgroundColor: chartColors,
-                        borderColor: chartColors.map(color => color.replace('0.6', '1')),
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                stepSize: 1
-                            }
-                        }
-                    },
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.dataset.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    const category = context.label;
-                                    const providers = data[category];
-                                    label += providers.join(', ');
-                                    return label;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        createChart('categoriesChartDe', 'Anzahl der Top-Anbieter pro Kategorie', categoriesDe);
-        createChart('categoriesChartEn', 'Number of Top Providers per Category', categoriesEn);
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
