@@ -52,14 +52,13 @@ th, td {
     border-bottom: 1px solid var(--border-color);
     padding: 12px 15px;
     text-align: left;
-    min-height: 20px; /* Mindesthöhe für alle Zellen */
+    min-height: 20px; /* min. height for all cells */
 }
 th {
     border-right: 1px solid var(--border-color);
 }
 td {
-    border-right: 1px solid var(--border-color);
-    /* Sicherstellen, dass alle Zellen (auch leere) sichtbare Begrenzungslinien haben */
+    border-right: 1px solid var(--border-color); /* border lines for ALL cells */
     border-left: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
 }
@@ -103,7 +102,7 @@ tr:hover td:last-child {
     border-radius: 0 8px 8px 0;
 }
 
-/* Spezielle Regeln für leere Tabellenzellen */
+/* Special rules for empty cells */
 td:empty {
     background-color: #fafafa;
     border: 1px solid var(--border-color);
@@ -310,6 +309,17 @@ body.dark-mode {
         align-items: center;
     }
 
+    /* Left-align specific columns in mobile view */
+    #providers + table td:nth-child(3),
+    #providers + table td:nth-child(4),
+    #models + table td:nth-child(3),
+    #providers-en + table td:nth-child(3),
+    #providers-en + table td:nth-child(4),
+    #models-en + table td:nth-child(3) {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
     /* Categories table - Right-align links in mobile view */
     #categories + table td:last-child a,
     #categories-en + table td:last-child a {
@@ -320,13 +330,7 @@ body.dark-mode {
     }
 
     /* Models table - Fix "Best for" column text wrapping */
-    #models + table td:last-child,
-    #models-en + table td:last-child {
-        text-align: left;
-        padding-left: 10px;
-        padding-right: 10px;
-        justify-content: flex-start;
-    }
+
 
     #models + table td:last-child *,
     #models-en + table td:last-child * {
