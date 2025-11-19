@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 4px;
+    overflow-x: hidden;
     background-color: var(--secondary-color);
     color: var(--text-color);
 }
@@ -641,7 +642,6 @@ p {
 
 /* Dark mode support for chart controls */
 body.dark-mode .chart-controls {
-    background: var(--secondary-color);
     border-color: var(--border-color);
 }
 
@@ -663,7 +663,7 @@ body.dark-mode .sort-controls button:hover {
 
 /* Animation for chart updates */
 .chart-container {
-    width: 75%;
+    width: 100%;
     margin: auto;
     transition: all 0.3s ease-in-out;
 }
