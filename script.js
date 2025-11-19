@@ -1,19 +1,21 @@
-const switcher = document.getElementById('lang-switcher');
+const langSwitcher = document.getElementById('lang-switcher');
+const themeSwitcher = document.getElementById('theme-switcher');
 const contentDe = document.getElementById('content-de');
 const contentEn = document.getElementById('content-en');
 const htmlEl = document.documentElement;
 
+// Language Switcher
 function setLanguage(lang) {
     if (lang === 'en') {
         contentDe.style.display = 'none';
         contentEn.style.display = 'block';
-        switcher.textContent = 'Wechsle zu Deutsch';
         htmlEl.setAttribute('lang', 'en');
+        langSwitcher.textContent = 'DE';
     } else {
         contentDe.style.display = 'block';
         contentEn.style.display = 'none';
-        switcher.textContent = 'Switch to English';
         htmlEl.setAttribute('lang', 'de');
+        langSwitcher.textContent = 'EN';
     }
 }
 
@@ -25,12 +27,36 @@ function getLangFromUrl() {
 let currentLang = getLangFromUrl() || 'de';
 setLanguage(currentLang);
 
-switcher.addEventListener('click', () => {
+langSwitcher.addEventListener('click', () => {
     const newLang = htmlEl.getAttribute('lang') === 'de' ? 'en' : 'de';
     const params = new URLSearchParams(window.location.search);
     params.set('lang', newLang);
     window.location.search = params.toString();
 });
+
+// Theme Switcher
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeSwitcher.checked = true;
+    } else {
+        document.body.classList.remove('dark-mode');
+        themeSwitcher.checked = false;
+    }
+}
+
+themeSwitcher.addEventListener('change', () => {
+    const currentTheme = themeSwitcher.checked ? 'dark' : 'light';
+    setTheme(currentTheme);
+    localStorage.setItem('theme', currentTheme);
+});
+
+// Set default theme to dark and check local storage
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+});
+
 
 const categoriesDe = {
     'Kontextverständnis': ['Claude', 'MiniMax'],

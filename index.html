@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="lang-switcher">Switch to English</button>
+    <button id="lang-switcher">EN</button>
+    <label class="theme-switch">
+        <input type="checkbox" id="theme-switcher">
+        <span class="slider"></span>
+    </label>
     <div class="container">
         <div id="content-de" class="lang-de">
         <h1>KI-Modelle Übersicht</h1>
@@ -239,7 +243,7 @@
             <ol>
                 <li><strong>Prompt:</strong> Anfrage an das KI-Modell</li>
                 <li><strong>Prompting:</strong> Schreiben einer Anfrage an ein KI-Modell</li>
-                <li><strong>Systemprompt:</strong> Vorgegebene Definition des KI-Modells (z.B. „Du bist ein hilfreiches moralisch richtig handelndes KI-Modell“)</li>
+                <li><strong>Systemprompt:</strong> Vorgegebene Definition des KI-Modells (z.B. „Du bist ein hilfreiches moralisch richtig handelndes KI-Modell")</li>
                 <li><strong>Halluzination:</strong> Erfindung von Informationen und Promptinhalten</li>
                 <li><strong>1 Token ≙</strong> 3 bis 4 Zeichen</li>
                 <li><strong>Reasoning:</strong> Ist das eigenständige Nachdenken des KI-Modells vor der Ausgabe der Nachricht an den Nutzer.</li>
@@ -359,7 +363,7 @@
                 </tr>
                 <tr>
                     <td>Hugging&nbsp;Face</td>
-                    <td><a href="https://huggingface.co/spaces">Hugging&nbsp;Face</a></td>
+                    <td><a href="https://huggingface.co/spaces">Hugging Face</a></td>
                     <td>• Wide range of open-source models<br>• Community-driven</td>
                     <td>• Quality of models can vary heavily</td>
                 </tr>
