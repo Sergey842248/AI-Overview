@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Models Overview</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --border-color: #ddd;
+            --header-bg: #4a90e2;
+            --header-text: white;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .lang-en {
+            display: none;
+        }
+        #lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+        #lang-switcher:hover {
+            background-color: #357abd;
+        }
+        p {
+            background: #eef;
+            padding: 15px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button id="lang-switcher">Switch to English</button>
+    <div class="container">
+        <div id="content-de" class="lang-de">
+        <h1>KI-Modelle Übersicht</h1>
+
+        <h2>Anbieter</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Anbieter</th>
+                    <th>Website</th>
+                    <th>Vorteile</th>
+                    <th>Nachteile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ChatGPT</td>
+                    <td>chatgpt.com</td>
+                    <td>• Allrounder<br>• Sehr gutes Reasoning</td>
+                    <td>• Halluziniert oft<br>• Gutes Prompting nötig</td>
+                </tr>
+                <tr>
+                    <td>Claude</td>
+                    <td>claude.ai</td>
+                    <td>• Gutes Kontextverständnis</td>
+                    <td>• Begrenzte Nutzung</td>
+                </tr>
+                <tr>
+                    <td>Gemini</td>
+                    <td>gemini.google.com</td>
+                    <td>• Mittelmäßig für alle Bereiche<br>• Gutes Researching<br>• Bildgenerierung möglich</td>
+                    <td>• Nur mittelmäßig gut in allen Bereichen</td>
+                </tr>
+                <tr>
+                    <td>Perplexity</td>
+                    <td>perplexity.ai</td>
+                    <td>• Sehr gutes Researching</td>
+                    <td>• Kaum logisches Denken</td>
+                </tr>
+                <tr>
+                    <td>Qwen</td>
+                    <td>chat.qwen.ai</td>
+                    <td>• Komplett kostenlos<br>• Unendliche Anfragen<br>• Gute Reasoning-Modelle<br>• Breite Auswahl an Modellen<br>• KI-Modelle parallellaufend (Vergleich zwischen KI-Modellen)</td>
+                    <td>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
+                </tr>
+                <tr>
+                    <td>MiniMax</td>
+                    <td>chat.minimax.io</td>
+                    <td>• Sehr hohes Tokenverständnis (1 Mio. Tokens)</td>
+                    <td>• Schlechteres Reasoning und Research, als bei anderen Modellen</td>
+                </tr>
+                <tr>
+                    <td>Grok</td>
+                    <td>grok.com</td>
+                    <td>• Zugriff auf X (ehemals Twitter)-Posts<br>• Sehr aktuell<br>• Gut für Foren</td>
+                    <td>• Nutzt X (ehemals Twitter) Posts → Hohe Fehleranfälligkeit</td>
+                </tr>
+                <tr>
+                    <td>Scira</td>
+                    <td>scira.ai</td>
+                    <td>• Kostenlose Auswahl zwischen guten KI-Modellen<br>• Hohe Auswahl von Research-Anbietern</td>
+                    <td>• Viele KI-Modelle kostenpflichtig</td>
+                </tr>
+                 <tr>
+                    <td>Groq</td>
+                    <td>chat.groq.com</td>
+                    <td>• Viele sehr gute KI-Modelle zur Auswahl</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Groq console</td>
+                    <td>console.groq.com/playground</td>
+                    <td>• Systemprompt anpassbar<br>• Viele KI-Modelle zur Auswahl</td>
+                    <td>• Professionelles Layout, kann verwirrend sein</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek</td>
+                    <td>chat.deepseek.com</td>
+                    <td>• Unendlich Anfragen<br>• Komplett kostenlos<br>• Reasoning</td>
+                    <td>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)<br>• Keine spezifische Modellauswahl</td>
+                </tr>
+                <tr>
+                    <td>Mistral</td>
+                    <td>chat.mistral.ai</td>
+                    <td>• Gutes Geschichtsverständnis<br>• Gutes Geografieverständnis</td>
+                    <td>• Begrenztes Logikverständnis</td>
+                </tr>
+                <tr>
+                    <td>kimi.com</td>
+                    <td>kimi.com</td>
+                    <td>• Größtenteils kostenlos<br>• Gutes Reasoning<br>• Sehr gutes gratis KI-Modell</td>
+                    <td>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
+                </tr>
+                <tr>
+                    <td>ChatGLM</td>
+                    <td>chatglm.cn</td>
+                    <td>• Tiefes Reasoning<br>• Gutes Logikverständnis</td>
+                    <td>• Interface größtenteils nur auf Chinesisch<br>• Chinafreundlich (schlechter für nicht-chinesische Geschichte und Geografie)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Modelle</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Modellname</th>
+                    <th>Website</th>
+                    <th>Am besten für</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>GPT-5</td><td>chatgpt.com</td><td>• Allrounder<br>• Reasoning</td></tr>
+                <tr><td>Claude Sonnet 4.5</td><td>claude.ai</td><td>• Kontextverständnis<br>• Tiefes (sehr starkes) Reasoning</td></tr>
+                <tr><td>Claude Haiku 4.5</td><td>claude.ai</td><td>• Kontextverständnis<br>• Schnelle Antworten</td></tr>
+                <tr><td>2.5 Flash</td><td>gemini.google.com</td><td>• Schnelle Antworten</td></tr>
+                <tr><td>2.5 Pro</td><td>gemini.google.com</td><td>• Reasoning</td></tr>
+                <tr><td>Qwen3-Max</td><td>chat.qwen.ai</td><td>• Allrounder<br>• Komplexe Aufgaben</td></tr>
+                <tr><td>Qwen3-VL-235B-A22B</td><td>chat.qwen.ai</td><td>• Visuelles Verständnis</td></tr>
+                <tr><td>Qwen3-Coder</td><td>chat.qwen.ai</td><td>• Programmierung</td></tr>
+                <tr><td>Qwen2.5-Max</td><td>chat.qwen.ai</td><td>• Aktives Reasoning</td></tr>
+                <tr><td>MiniMax-01</td><td>chat.minimax.io</td><td>• Viel Kontext</td></tr>
+                <tr><td>Grok 3</td><td>grok.com</td><td>• Schnelle Antworten</td></tr>
+                <tr><td>Grok 4</td><td>grok.com</td><td>• Langes und tiefes Reasoning</td></tr>
+                <tr><td>Grok 4 Fast</td><td>scira.ai</td><td>• Schnelle Antworten</td></tr>
+                <tr><td>Qwen3 4B Thinking</td><td>scira.ai</td><td>• Reasoning</td></tr>
+                <tr><td>Llama 4</td><td>chat.groq.com</td><td>• Open-Source</td></tr>
+                <tr><td>Kimi K2</td><td>chat.groq.com</td><td>• Reasoning</td></tr>
+                <tr><td>GPT-OSS-120B</td><td>chat.groq.com</td><td>• Sehr nah an GPT-5</td></tr>
+                <tr><td>Kimi K2</td><td>kimi.com</td><td>• Sehr gute Logik</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Kategorien</h2>
+        <div style="width: 75%; margin: auto;">
+            <canvas id="categoriesChartDe"></canvas>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kategorie</th>
+                    <th>Bester Anbieter</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Kontextverständnis</td><td>• Claude (claude.ai)<br>• MiniMax (chat.minimax.io)</td></tr>
+                <tr><td>Research</td><td>• Perplexity (perplexity.ai)<br>• Scira (scira.ai)</td></tr>
+                <tr><td>Reasoning</td><td>• Grok (xAI) (grok.com)<br>• ChatGPT (chatgpt.com)</td></tr>
+                <tr><td>Visuelles Verständnis</td><td>• Qwen (chat.qwen.ai (Modell: Qwen3-VL-235B-A22B))</td></tr>
+                <tr><td>Anpassbarkeit (Im Bezug Prompting)</td><td>• Groq console (console.groq.com/playground)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Wörter-Erklärungen</h2>
+        <ol>
+            <li><strong>Prompt:</strong> Anfrage an das KI-Modell</li>
+            <li><strong>Prompting:</strong> Schreiben einer Anfrage an ein KI-Modell</li>
+            <li><strong>Systemprompt:</strong> Vorgegebene Definition des KI-Modells (z.B. „Du bist ein hilfreiches moralisch richtig handelndes KI-Modell“)</li>
+            <li><strong>Halluzination:</strong> Erfindung von Informationen und Promptinhalten</li>
+            <li><strong>1 Token ≙</strong> 3 bis 4 Zeichen</li>
+            <li><strong>Reasoning:</strong> Ist das eigenständige Nachdenken des KI-Modells vor der Ausgabe der Nachricht an den Nutzer.</li>
+            <li><strong>Research:</strong> Recherche im Internet</li>
+            <li><strong>Open-Source:</strong> Quelloffen, Modell kann heruntergeladen und lokal (ohne Internet) ausgeführt werden.</li>
+        </ol>
+
+        <h2>Prompting</h2>
+        <h3>Reihenfolge beachten:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Beispiel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rollenzuweisung</td>
+                    <td>Du bist Astrophysiker mit 30 Jahren Berufserfahrung.</td>
+                </tr>
+                <tr>
+                    <td>Thema</td>
+                    <td>Die Sternenkonstellation über Sachsen und Bayern im Vergleich</td>
+                </tr>
+                <tr>
+                    <td>Kontext</td>
+                    <td>Als Komplexe Leistung</td>
+                </tr>
+                <tr>
+                    <td>Niveaudefinition</td>
+                    <td>Auf dem Niveau eines 10.-Klässlers mit fachlicher Sprache auf dem Niveau eines Gymnasiums</td>
+                </tr>
+                <tr>
+                    <td>Positive Prompt (was enthalten sein soll)</td>
+                    <td>Nutze viel Fachsprache und beziehe dich nur auf vertrauenswürdige Quellen, prüfe selbst kritisch die Richtigkeit deiner Informationen.</td>
+                </tr>
+                <tr>
+                    <td>Negative Prompt</td>
+                    <td>Mache keine Rechtschreibfehler und füge keine falschen Informationen hinzu.</td>
+                </tr>
+                <tr>
+                    <td>Weiteres (Mehr Details)</td>
+                    <td>Halte dich kurz, bringe es auf den Punkt...</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Beispiel:</h3>
+        <p>
+            Du bist Astrophysiker mit 30 Jahren Berufserfahrung und hast die Aufgabe, die Sternenkonstellation über Sachsen und Bayern am Nachthimmel für eine komplexe Leistung zu vergleichen.<br>
+            Halte dich auf dem Niveau eines 10.-Klässlers auf einem Gymnasium.<br>
+            Nutze viel Fachsprache und beziehe dich nur auf vertrauenswürdige Quellen, behalte dabei aber die Niveauangabe bei. Prüfe selbst kritisch die Richtigkeit deiner Informationen.<br>
+            <br>
+            Mache keine Rechtschreibfehler und füge keine falschen Informationen hinzu.<br>
+            <br>
+            Halte dich kurz, bringe es auf den Punkt
+        </p>
+        </div>
+
+        <div id="content-en" class="lang-en">
+        <h1>AI Models Overview</h1>
+
+        <h2>Providers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Website</th>
+                    <th>Advantages</th>
+                    <th>Disadvantages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ChatGPT</td>
+                    <td>chatgpt.com</td>
+                    <td>• All-rounder<br>• Very good reasoning</td>
+                    <td>• Often hallucinates<br>• Good prompting necessary</td>
+                </tr>
+                <tr>
+                    <td>Claude</td>
+                    <td>claude.ai</td>
+                    <td>• Good context understanding</td>
+                    <td>• Limited usage</td>
+                </tr>
+                <tr>
+                    <td>Gemini</td>
+                    <td>gemini.google.com</td>
+                    <td>• Moderate for all areas<br>• Good researching<br>• Image generation possible</td>
+                    <td>• Only moderately good in all areas</td>
+                </tr>
+                <tr>
+                    <td>Perplexity</td>
+                    <td>perplexity.ai</td>
+                    <td>• Very good researching</td>
+                    <td>• Hardly any logical thinking</td>
+                </tr>
+                <tr>
+                    <td>Qwen</td>
+                    <td>chat.qwen.ai</td>
+                    <td>• Completely free<br>• Unlimited requests<br>• Good reasoning models<br>• Wide selection of models<br>• AI models running in parallel (comparison between AI models)</td>
+                    <td>• China-friendly (worse for non-Chinese history and geography)</td>
+                </tr>
+                <tr>
+                    <td>MiniMax</td>
+                    <td>chat.minimax.io</td>
+                    <td>• Very high token understanding (1 million tokens)</td>
+                    <td>• Worse reasoning and research than other models</td>
+                </tr>
+                <tr>
+                    <td>Grok</td>
+                    <td>grok.com</td>
+                    <td>• Access to X (formerly Twitter) posts<br>• Very up-to-date<br>• Good for forums</td>
+                    <td>• Uses X (formerly Twitter) posts → High susceptibility to errors</td>
+                </tr>
+                <tr>
+                    <td>Scira</td>
+                    <td>scira.ai</td>
+                    <td>• Free choice between good AI models<br>• Wide selection of research providers</td>
+                    <td>• Many AI models are paid</td>
+                </tr>
+                <tr>
+                    <td>Groq</td>
+                    <td>chat.groq.com</td>
+                    <td>• Many very good AI models to choose from</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Groq console</td>
+                    <td>console.groq.com/playground</td>
+                    <td>• System prompt customizable<br>• Many AI models to choose from</td>
+                    <td>• Professional layout, can be confusing</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek</td>
+                    <td>chat.deepseek.com</td>
+                    <td>• Unlimited requests<br>• Completely free<br>• Reasoning</td>
+                    <td>• China-friendly (worse for non-Chinese history and geography)<br>• No specific model selection</td>
+                </tr>
+                <tr>
+                    <td>Mistral</td>
+                    <td>chat.mistral.ai</td>
+                    <td>• Good history understanding<br>• Good geography understanding</td>
+                    <td>• Limited logic understanding</td>
+                </tr>
+                <tr>
+                    <td>kimi.com</td>
+                    <td>kimi.com</td>
+                    <td>• Mostly free<br>• Good reasoning<br>• Very good free AI model</td>
+                    <td>• China-friendly (worse for non-Chinese history and geography)</td>
+                </tr>
+                <tr>
+                    <td>ChatGLM</td>
+                    <td>chatglm.cn</td>
+                    <td>• Deep reasoning<br>• Good logic understanding</td>
+                    <td>• Interface mostly only in Chinese<br>• China-friendly (worse for non-Chinese history and geography)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Models</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model Name</th>
+                    <th>Website</th>
+                    <th>Best for</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>GPT-5</td><td>chatgpt.com</td><td>• All-rounder<br>• Reasoning</td></tr>
+                <tr><td>Claude Sonnet 4.5</td><td>claude.ai</td><td>• Context understanding<br>• Deep (very strong) Reasoning</td></tr>
+                <tr><td>Claude Haiku 4.5</td><td>claude.ai</td><td>• Context understanding<br>• Fast answers</td></tr>
+                <tr><td>2.5 Flash</td><td>gemini.google.com</td><td>• Fast answers</td></tr>
+                <tr><td>2.5 Pro</td><td>gemini.google.com</td><td>• Reasoning</td></tr>
+                <tr><td>Qwen3-Max</td><td>chat.qwen.ai</td><td>• All-rounder<br>• Complex tasks</td></tr>
+                <tr><td>Qwen3-VL-235B-A22B</td><td>chat.qwen.ai</td><td>• Visual understanding</td></tr>
+                <tr><td>Qwen3-Coder</td><td>chat.qwen.ai</td><td>• Programming</td></tr>
+                <tr><td>Qwen2.5-Max</td><td>chat.qwen.ai</td><td>• Active Reasoning</td></tr>
+                <tr><td>MiniMax-01</td><td>chat.minimax.io</td><td>• A lot of context</td></tr>
+                <tr><td>Grok 3</td><td>grok.com</td><td>• Fast answers</td></tr>
+                <tr><td>Grok 4</td><td>grok.com</td><td>• Long and deep reasoning</td></tr>
+                <tr><td>Grok 4 Fast</td><td>scira.ai</td><td>• Fast answers</td></tr>
+                <tr><td>Qwen3 4B Thinking</td><td>scira.ai</td><td>• Reasoning</td></tr>
+                <tr><td>Llama 4</td><td>chat.groq.com</td><td>• Open-Source</td></tr>
+                <tr><td>Kimi K2</td><td>chat.groq.com</td><td>• Reasoning</td></tr>
+                <tr><td>GPT-OSS-120B</td><td>chat.groq.com</td><td>• Very close to GPT-5</td></tr>
+                <tr><td>Kimi K2</td><td>kimi.com</td><td>• Very good logic</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Categories</h2>
+        <div style="width: 75%; margin: auto;">
+            <canvas id="categoriesChartEn"></canvas>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Best Provider</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Context understanding</td><td>• Claude (claude.ai)<br>• MiniMax (chat.minimax.io)</td></tr>
+                <tr><td>Research</td><td>• Perplexity (perplexity.ai)<br>• Scira (scira.ai)</td></tr>
+                <tr><td>Reasoning</td><td>• Grok (xAI) (grok.com)<br>• ChatGPT (chatgpt.com)</td></tr>
+                <tr><td>Visual understanding</td><td>• Qwen (chat.qwen.ai (Model: Qwen3-VL-235B-A22B))</td></tr>
+                <tr><td>Customizability (In terms of prompting)</td><td>• Groq console (console.groq.com/playground)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Glossary</h2>
+        <ol>
+            <li><strong>Prompt:</strong> Request to the AI model</li>
+            <li><strong>Prompting:</strong> Writing a request to an AI model</li>
+            <li><strong>System Prompt:</strong> Predefined definition of the AI model (e.g., "You are a helpful, morally correct AI model")</li>
+            <li><strong>Hallucination:</strong> Invention of information and prompt content</li>
+            <li><strong>1 Token ≙</strong> 3 to 4 characters</li>
+            <li><strong>Reasoning:</strong> The AI model's independent thinking before outputting the message to the user.</li>
+            <li><strong>Research:</strong> Searching the internet</li>
+            <li><strong>Open-Source:</strong> Source code is open, the model can be downloaded and run locally (without internet).</li>
+        </ol>
+
+        <h2>Prompting</h2>
+        <h3>Note the order:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Role assignment</td>
+                    <td>You are an astrophysicist with 30 years of professional experience.</td>
+                </tr>
+                <tr>
+                    <td>Topic</td>
+                    <td>The star constellation over Saxony and Bavaria in comparison</td>
+                </tr>
+                <tr>
+                    <td>Context</td>
+                    <td>As a complex achievement</td>
+                </tr>
+                <tr>
+                    <td>Level definition</td>
+                    <td>At the level of a 10th grader with technical language at the level of a high school</td>
+                </tr>
+                <tr>
+                    <td>Positive Prompt (what should be included)</td>
+                    <td>Use a lot of technical language and only refer to trustworthy sources, critically check the accuracy of your information yourself.</td>
+                </tr>
+                <tr>
+                    <td>Negative Prompt</td>
+                    <td>Do not make spelling mistakes and do not add false information.</td>
+                </tr>
+                <tr>
+                    <td>Further (More details)</td>
+                    <td>Keep it short, get to the point...</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Example:</h3>
+        <p>
+            You are an astrophysicist with 30 years of professional experience and have the task of comparing the star constellation over Saxony and Bavaria in the night sky for a complex achievement.<br>
+            Keep yourself at the level of a 10th grader at a high school.<br>
+            Use a lot of technical language and only refer to trustworthy sources, but keep the level specification. Critically check the accuracy of your information yourself.<br>
+            <br>
+            Do not make spelling mistakes and do not add false information.<br>
+            <br>
+            Keep it short, get to the point
+        </p>
+        </div>
+    </div>
+    <script>
+        const switcher = document.getElementById('lang-switcher');
+        const contentDe = document.getElementById('content-de');
+        const contentEn = document.getElementById('content-en');
+        const htmlEl = document.documentElement;
+
+        let currentLang = 'de';
+
+        switcher.addEventListener('click', () => {
+            if (currentLang === 'de') {
+                contentDe.style.display = 'none';
+                contentEn.style.display = 'block';
+                switcher.textContent = 'Wechsle zu Deutsch';
+                htmlEl.setAttribute('lang', 'en');
+                currentLang = 'en';
+            } else {
+                contentDe.style.display = 'block';
+                contentEn.style.display = 'none';
+                switcher.textContent = 'Switch to English';
+                htmlEl.setAttribute('lang', 'de');
+                currentLang = 'de';
+            }
+        });
+
+        const categoriesDe = {
+            'Kontextverständnis': ['Claude', 'MiniMax'],
+            'Research': ['Perplexity', 'Scira'],
+            'Reasoning': ['Grok', 'ChatGPT'],
+            'Visuelles Verständnis': ['Qwen'],
+            'Anpassbarkeit': ['Groq console']
+        };
+
+        const categoriesEn = {
+            'Context understanding': ['Claude', 'MiniMax'],
+            'Research': ['Perplexity', 'Scira'],
+            'Reasoning': ['Grok', 'ChatGPT'],
+            'Visual understanding': ['Qwen'],
+            'Customizability': ['Groq console']
+        };
+
+        const chartColors = [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)'
+        ];
+
+        function createChart(canvasId, chartTitle, data) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(data),
+                    datasets: [{
+                        label: chartTitle,
+                        data: Object.values(data).map(arr => arr.length),
+                        backgroundColor: chartColors,
+                        borderColor: chartColors.map(color => color.replace('0.6', '1')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    const category = context.label;
+                                    const providers = data[category];
+                                    label += providers.join(', ');
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        createChart('categoriesChartDe', 'Anzahl der Top-Anbieter pro Kategorie', categoriesDe);
+        createChart('categoriesChartEn', 'Number of Top Providers per Category', categoriesEn);
+
+    </script>
+</body>
+</html>
