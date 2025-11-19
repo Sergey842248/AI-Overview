@@ -125,13 +125,13 @@ const providerRatingsDe = {
     'Groq': { 
         userexperience: 8, 
         modell_schlauheit: 9, 
-        upload_möglichkeiten: 6, 
+        upload_möglichkeiten: 0, 
         gesamt: 7.6
     },
     'Groq console': { 
         userexperience: 5, 
         modell_schlauheit: 9, 
-        upload_möglichkeiten: 8, 
+        upload_möglichkeiten: 0, 
         gesamt: 6.8
     },
     'DeepSeek': { 
@@ -167,7 +167,7 @@ const providerRatingsDe = {
     'Cohere': { 
         userexperience: 7, 
         modell_schlauheit: 7, 
-        upload_möglichkeiten: 8, 
+        upload_möglichkeiten: 2, 
         gesamt: 6.8
     }
 };
@@ -224,13 +224,13 @@ const providerRatingsEn = {
     'Groq': { 
         userexperience: 8, 
         modell_schlauheit: 9, 
-        upload_möglichkeiten: 6, 
+        upload_möglichkeiten: 0, 
         gesamt: 7.6
     },
     'Groq console': { 
         userexperience: 5, 
         modell_schlauheit: 9, 
-        upload_möglichkeiten: 8, 
+        upload_möglichkeiten: 0, 
         gesamt: 6.8
     },
     'DeepSeek': { 
@@ -266,7 +266,7 @@ const providerRatingsEn = {
     'Cohere': { 
         userexperience: 7, 
         modell_schlauheit: 7, 
-        upload_möglichkeiten: 8, 
+        upload_möglichkeiten: 2, 
         gesamt: 6.8
     }
 };
