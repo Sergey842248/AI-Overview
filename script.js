@@ -538,10 +538,31 @@ function updateChartSort(canvasId, data, labels, sortCategory, sortDirection, la
     });
 }
 
+// Funktion zur Überprüfung und Anpassung der Chart-Ansicht basierend auf Bildschirmgröße
+function adjustChartsForScreenSize() {
+    const isMobile = window.innerWidth < 768;
+    const langs = ['de', 'en'];
+    langs.forEach(lang => {
+        const splitChartsContainer = document.getElementById(`split-charts-${lang}`);
+        const isCurrentlySplit = splitChartsContainer.style.display === 'grid';
+        if (isMobile && !isCurrentlySplit) {
+            toggleSplitCharts(lang, lang === 'de' ? providerRatingsDe : providerRatingsEn, lang === 'de' ? criteriaLabelsDe : criteriaLabelsEn);
+        } else if (!isMobile && isCurrentlySplit) {
+            toggleSplitCharts(lang, lang === 'de' ? providerRatingsDe : providerRatingsEn, lang === 'de' ? criteriaLabelsDe : criteriaLabelsEn);
+        }
+    });
+}
+
 // Erstelle die Charts nach dem Laden der Seite
 document.addEventListener('DOMContentLoaded', () => {
     createRatingChart('categoriesChartDe', providerRatingsDe, criteriaLabelsDe);
     createRatingChart('categoriesChartEn', providerRatingsEn, criteriaLabelsEn);
+
+    // Initiale Anpassung für mobile Ansicht
+    adjustChartsForScreenSize();
+
+    // Listener für Bildschirmgrößenänderungen
+    window.addEventListener('resize', adjustChartsForScreenSize);
     
     // Event-Listener für deutsche Sortierung
     const sortCategoryDe = document.getElementById('sort-category-de');
