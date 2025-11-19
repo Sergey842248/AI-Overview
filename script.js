@@ -9,7 +9,7 @@ let hiddenDatasets = {
     'categoriesChartEn': [false, false, false, false]
 };
 
-// Language Switcher
+// Language switcher
 function setLanguage(lang) {
     if (lang === 'en') {
         contentDe.style.display = 'none';
@@ -39,7 +39,7 @@ langSwitcher.addEventListener('click', () => {
     window.location.search = params.toString();
 });
 
-// Theme Switcher
+// Theme switcher
 function setTheme(theme) {
     if (theme === 'dark') {
         document.body.classList.add('dark-mode');
@@ -56,12 +56,12 @@ themeSwitcher.addEventListener('change', () => {
     localStorage.setItem('theme', currentTheme);
 });
 
-// Set default theme to dark and check local storage
+// Set default theme to dark + check local storage
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
 
-    // Add data-labels to table cells for responsive view
+    // Add data labels to table cells for responsive view
     document.querySelectorAll('table').forEach(table => {
         const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent);
         table.querySelectorAll('tbody tr').forEach(row => {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Bewertung der Anbieter nach verschiedenen Kriterien (Skala 1-10)
+// Ratings Data (Provider)
 const providerRatingsDe = {
     'ChatGPT': { 
         userexperience: 9, 
@@ -310,7 +310,7 @@ function createRatingChart(canvasId, data, labels) {
     const providers = Object.keys(data);
     const criteria = ['userexperience', 'modell_schlauheit', 'upload_möglichkeiten', 'gesamt'];
     
-    // Standard: alphabetische Sortierung
+    // Default: alphabetical sorting
     const sortedProviders = providers.sort();
     
     const datasets = criteria.map((criterion, index) => ({
@@ -357,7 +357,6 @@ function createRatingChart(canvasId, data, labels) {
                                 lineWidth: dataset.borderWidth,
                                 hidden: !chart.isDatasetVisible(i),
                                 datasetIndex: i,
-                                // Add a class to the legend item's text
                                 fontColor: !chart.isDatasetVisible(i) ? '#a9a9a9' : '#666',
                             }));
                         }
@@ -400,7 +399,7 @@ function createRatingChart(canvasId, data, labels) {
     });
 }
 
-// Sortierungsvariablen
+// Sort variables
 let currentSortCategoryDe = 'gesamt';
 let sortDirectionDe = 'desc';
 let currentSortCategoryEn = 'gesamt';
@@ -408,7 +407,7 @@ let sortDirectionEn = 'desc';
 
 function getSortedProviders(data, sortCategory, sortDirection) {
     const providers = Object.keys(data);
-    // Sortierung nach gewählter Kategorie
+    // Sort by selected category
     if (sortCategory === 'gesamt') {
         return providers.sort((a, b) => {
             const comparison = data[b].gesamt - data[a].gesamt;
@@ -430,7 +429,7 @@ function getSortedProviders(data, sortCategory, sortDirection) {
             return sortDirection === 'desc' ? comparison : -comparison;
         });
     }
-    return providers; // Default case
+    return providers; 
 }
 
 function updateChartSort(canvasId, data, labels, sortCategory, sortDirection, lang) {
@@ -538,7 +537,7 @@ function updateChartSort(canvasId, data, labels, sortCategory, sortDirection, la
     });
 }
 
-// Funktion zur Überprüfung und Anpassung der Chart-Ansicht basierend auf Bildschirmgröße
+// Dynamic chart adjustment (screen size based)
 function adjustChartsForScreenSize() {
     const isMobile = window.innerWidth < 768;
     const langs = ['de', 'en'];
@@ -553,18 +552,17 @@ function adjustChartsForScreenSize() {
     });
 }
 
-// Erstelle die Charts nach dem Laden der Seite
+// Create charts on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     createRatingChart('categoriesChartDe', providerRatingsDe, criteriaLabelsDe);
     createRatingChart('categoriesChartEn', providerRatingsEn, criteriaLabelsEn);
 
-    // Initiale Anpassung für mobile Ansicht
+    // Initial adjusting for mobile
     adjustChartsForScreenSize();
 
-    // Listener für Bildschirmgrößenänderungen
     window.addEventListener('resize', adjustChartsForScreenSize);
     
-    // Event-Listener für deutsche Sortierung
+    // Event listener for german sorting
     const sortCategoryDe = document.getElementById('sort-category-de');
     const sortDirectionBtnDe = document.getElementById('sort-direction-de');
     
@@ -583,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Event-Listener für englische Sortierung
+    // Event listener for englisch sorting
     const sortCategoryEn = document.getElementById('sort-category-en');
     const sortDirectionBtnEn = document.getElementById('sort-direction-en');
     
@@ -602,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event-Listener für Graphen aufteilen
+    // Event listener for graph splitting
     const splitChartBtnDe = document.getElementById('split-chart-de');
     if (splitChartBtnDe) {
         splitChartBtnDe.addEventListener('click', () => {

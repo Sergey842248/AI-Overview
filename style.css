@@ -52,7 +52,7 @@ th, td {
     border-bottom: 1px solid var(--border-color);
     padding: 12px 15px;
     text-align: left;
-    min-height: 20px; /* min. height for all cells */
+    min-height: 20px; /* min. height for all rows */
 }
 th {
     border-right: 1px solid var(--border-color);
@@ -102,7 +102,7 @@ tr:hover td:last-child {
     border-radius: 0 8px 8px 0;
 }
 
-/* Special rules for empty cells */
+/* Empty cells */
 td:empty {
     background-color: #fafafa;
     border: 1px solid var(--border-color);
@@ -234,7 +234,7 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
-/* MOBILE FIXES - Mobile-specific styling only */
+/* MOBILE styling */
 @media (max-width: 600px) {
     #lang-switcher {
         position: absolute;
@@ -278,7 +278,7 @@ body.dark-mode {
         border-radius: 8px;
     }
 
-    /* Standard mobile table cell styling */
+    /* Default mobile table cell styling */
     td {
         border: none;
         border-bottom: 1px solid var(--border-color);
@@ -309,7 +309,7 @@ body.dark-mode {
         align-items: center;
     }
 
-    /* Left-align specific columns in mobile view */
+    /* Left-align specific columns (mobile only) */
     #providers + table td:nth-child(3),
     #providers + table td:nth-child(4),
     #models + table td:nth-child(3),
@@ -320,7 +320,7 @@ body.dark-mode {
         justify-content: flex-start;
     }
 
-    /* Categories table - Right-align links in mobile view */
+    /* Categories table */
     #categories + table td:last-child a,
     #categories-en + table td:last-child a {
         text-align: right;
@@ -329,7 +329,7 @@ body.dark-mode {
         display: flex;
     }
 
-    /* Models table - Fix "Best for" column text wrapping */
+    /* Models table */
 
 
     #models + table td:last-child *,
@@ -346,7 +346,7 @@ body.dark-mode {
         margin: 2px 0;
     }
 
-    /* Empty cells styling for mobile */
+    /* Empty cells styling */
     td:empty {
         background-color: #fafafa;
         border-bottom: 1px solid var(--border-color);
@@ -356,7 +356,7 @@ body.dark-mode {
         font-style: italic;
     }
 
-    /* Chart mobile optimizations */
+    /* Chart mobile improvements */
     .chart-container {
         width: 100% !important;
         margin: 0 !important;
@@ -374,7 +374,7 @@ body.dark-mode {
     }
 }
 
-/* Desktop styles remain unchanged */
+
 body.dark-mode .container {
     background-color: #1e1e1e;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
@@ -413,7 +413,7 @@ body.dark-mode .toc {
     border-left: 5px solid var(--primary-color);
 }
 
-/* Link Styling - Same colors for both light and dark mode */
+/* Link styling */
 a {
     color: hwb(218 15% 2%) !important;
     text-decoration: none;
@@ -482,7 +482,7 @@ p {
     text-decoration: underline;
 }
 
-/* Chart Controls - Matching Website Style */
+/* Chart controls (sorting etc.) */
 .chart-controls {
     display: flex;
     justify-content: center;
@@ -554,7 +554,7 @@ p {
     min-width: 120px;
 }
 
-/* Clean Select Styling */
+/* Sort select styling */
 .sort-controls select {
     appearance: none;
     -webkit-appearance: none;
@@ -584,7 +584,7 @@ p {
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
-/* Clean Button Styling */
+/* Sort button styling */
 .sort-controls button {
     background: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -782,7 +782,7 @@ body.dark-mode #glossary-search-en {
     border: 1px solid var(--border-color);
 }
 
-/* AI Categories Cards - Light Mode Styling */
+/* Categories cards */
 .ai-categories {
     display: flex;
     flex-direction: column;
@@ -827,7 +827,7 @@ body.dark-mode #glossary-search-en {
     }
 }
 
-/* Dark Mode Overrides for AI Categories */
+/* Dark Mode Overrides Categories */
 body.dark-mode .ai-categories .item {
     background: #2c2c2c;
     border-color: #444;
