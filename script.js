@@ -406,38 +406,47 @@ let sortDirectionDe = 'desc';
 let currentSortCategoryEn = 'gesamt';
 let sortDirectionEn = 'desc';
 
+function getSortedProviders(data, sortCategory, sortDirection) {
+    const providers = Object.keys(data);
+    // Sortierung nach gewählter Kategorie
+    if (sortCategory === 'gesamt') {
+        return providers.sort((a, b) => {
+            const comparison = data[b].gesamt - data[a].gesamt;
+            return sortDirection === 'desc' ? comparison : -comparison;
+        });
+    } else if (sortCategory === 'userexperience') {
+        return providers.sort((a, b) => {
+            const comparison = data[b].userexperience - data[a].userexperience;
+            return sortDirection === 'desc' ? comparison : -comparison;
+        });
+    } else if (sortCategory === 'modell_schlauheit') {
+        return providers.sort((a, b) => {
+            const comparison = data[b].modell_schlauheit - data[a].modell_schlauheit;
+            return sortDirection === 'desc' ? comparison : -comparison;
+        });
+    } else if (sortCategory === 'upload_möglichkeiten') {
+        return providers.sort((a, b) => {
+            const comparison = data[b].upload_möglichkeiten - data[a].upload_möglichkeiten;
+            return sortDirection === 'desc' ? comparison : -comparison;
+        });
+    }
+    return providers; // Default case
+}
+
 function updateChartSort(canvasId, data, labels, sortCategory, sortDirection, lang) {
+    const sortedProviders = getSortedProviders(data, sortCategory, sortDirection);
+
+    const splitChartsContainer = document.getElementById(`split-charts-${lang}`);
+    if (splitChartsContainer.style.display === 'grid') {
+        createSplitCharts(lang, data, labels, sortedProviders);
+        return;
+    }
+
     const ctx = document.getElementById(canvasId).getContext('2d');
     const chart = Chart.getChart(ctx);
     
     if (chart) {
         chart.destroy();
-    }
-    
-    const providers = Object.keys(data);
-    let sortedProviders;
-    
-    // Sortierung nach gewählter Kategorie
-    if (sortCategory === 'gesamt') {
-        sortedProviders = providers.sort((a, b) => {
-            const comparison = data[b].gesamt - data[a].gesamt;
-            return sortDirection === 'desc' ? comparison : -comparison;
-        });
-    } else if (sortCategory === 'userexperience') {
-        sortedProviders = providers.sort((a, b) => {
-            const comparison = data[b].userexperience - data[a].userexperience;
-            return sortDirection === 'desc' ? comparison : -comparison;
-        });
-    } else if (sortCategory === 'modell_schlauheit') {
-        sortedProviders = providers.sort((a, b) => {
-            const comparison = data[b].modell_schlauheit - data[a].modell_schlauheit;
-            return sortDirection === 'desc' ? comparison : -comparison;
-        });
-    } else if (sortCategory === 'upload_möglichkeiten') {
-        sortedProviders = providers.sort((a, b) => {
-            const comparison = data[b].upload_möglichkeiten - data[a].upload_möglichkeiten;
-            return sortDirection === 'desc' ? comparison : -comparison;
-        });
     }
     
     const criteria = ['userexperience', 'modell_schlauheit', 'upload_möglichkeiten', 'gesamt'];
@@ -487,7 +496,6 @@ function updateChartSort(canvasId, data, labels, sortCategory, sortDirection, la
                                 lineWidth: dataset.borderWidth,
                                 hidden: !chart.isDatasetVisible(i),
                                 datasetIndex: i,
-                                // Add a class to the legend item's text
                                 fontColor: !chart.isDatasetVisible(i) ? '#a9a9a9' : '#666',
                             }));
                         }
@@ -572,7 +580,97 @@ document.addEventListener('DOMContentLoaded', () => {
             updateChartSort('categoriesChartEn', providerRatingsEn, criteriaLabelsEn, currentSortCategoryEn, sortDirectionEn, 'en');
         });
     }
+
+    // Event-Listener für Graphen aufteilen
+    const splitChartBtnDe = document.getElementById('split-chart-de');
+    if (splitChartBtnDe) {
+        splitChartBtnDe.addEventListener('click', () => {
+            toggleSplitCharts('de', providerRatingsDe, criteriaLabelsDe);
+        });
+    }
+
+    const splitChartBtnEn = document.getElementById('split-chart-en');
+    if (splitChartBtnEn) {
+        splitChartBtnEn.addEventListener('click', () => {
+            toggleSplitCharts('en', providerRatingsEn, criteriaLabelsEn);
+        });
+    }
 });
+
+function toggleSplitCharts(lang, data, labels) {
+    const mainChartContainer = document.querySelector(`#content-${lang} .chart-container`);
+    const splitChartsContainer = document.getElementById(`split-charts-${lang}`);
+    const splitButton = document.getElementById(`split-chart-${lang}`);
+
+    if (splitChartsContainer.style.display === 'grid') {
+        splitChartsContainer.style.display = 'none';
+        mainChartContainer.style.display = 'block';
+        splitChartsContainer.innerHTML = '';
+        splitButton.textContent = lang === 'de' ? 'Graphen aufteilen' : 'Split Charts';
+    } else {
+        splitChartsContainer.style.display = 'grid';
+        mainChartContainer.style.display = 'none';
+        const currentSortCategory = lang === 'de' ? currentSortCategoryDe : currentSortCategoryEn;
+        const sortDirection = lang === 'de' ? sortDirectionDe : sortDirectionEn;
+        const sortedProviders = getSortedProviders(data, currentSortCategory, sortDirection);
+        createSplitCharts(lang, data, labels, sortedProviders);
+        splitButton.textContent = lang === 'de' ? 'Gesamtübersicht' : 'Overall View';
+    }
+}
+
+function createSplitCharts(lang, data, labels, sortedProviders) {
+    const container = document.getElementById(`split-charts-${lang}`);
+    container.innerHTML = ''; // Clear previous charts
+    const providers = sortedProviders || Object.keys(data);
+
+    providers.forEach((provider, index) => {
+        const chartContainer = document.createElement('div');
+        chartContainer.className = 'split-chart';
+        const canvas = document.createElement('canvas');
+        canvas.id = `split-chart-${lang}-${index}`;
+        chartContainer.appendChild(canvas);
+        container.appendChild(chartContainer);
+
+        const ctx = canvas.getContext('2d');
+        const criteria = ['userexperience', 'modell_schlauheit', 'upload_möglichkeiten', 'gesamt'];
+        const chartData = criteria.map(criterion => data[provider][criterion]);
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: criteria.map(c => labels[c]),
+                datasets: [{
+                    label: provider,
+                    data: chartData,
+                    backgroundColor: chartColors,
+                    borderColor: chartColors.map(color => color.replace('0.8', '1')),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: provider
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    });
+}
 
 // Glossary
 document.querySelectorAll('.glossary-term').forEach(button => {
