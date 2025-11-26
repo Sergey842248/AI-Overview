@@ -23,17 +23,15 @@
         <div id="content-de" class="lang-de">
         <h1>KI-Modelle Übersicht</h1>
 
-        <h2>Inhaltsverzeichnis</h2>
-        <div class="toc">
-        <ul>
-            <li><a href="#providers">Anbieter</a></li>
-            <li><a href="#models">Modelle</a></li>
-            <li><a href="#categories">Kategorien</a></li>
-            <li><a href="#prompting">Prompting</a></li>
-            <li><a href="#glossary">Glossar</a></li>
-        </ul>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="providers-de">Anbieter</button>
+            <button class="tab-button" data-tab="models-de">Modelle</button>
+            <button class="tab-button" data-tab="categories-de">Kategorien</button>
+            <button class="tab-button" data-tab="prompting-de">Prompting</button>
+            <button class="tab-button" data-tab="glossary-de">Glossar</button>
         </div>
 
+        <div id="providers-de" class="tab-content active">
         <h2 id="providers">Anbieter</h2>
         <table>
             <thead>
@@ -143,7 +141,9 @@
                 </tr>
             </tbody>
         </table>
+        </div>
 
+        <div id="models-de" class="tab-content">
         <h2 id="models">Modelle</h2>
         <table>
             <thead>
@@ -174,7 +174,9 @@
                 <tr><td>Command R+</td><td><a href="https://dashboard.cohere.com/playground/chat">Cohere</a></td><td>• Optimiert für Unternehmens-Workflows</td></tr>
             </tbody>
         </table>
+        </div>
 
+        <div id="categories-de" class="tab-content">
         <h2 id="categories">Kategorien</h2>
         <div class="chart-controls">
             <div class="sort-controls">
@@ -251,6 +253,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div id="prompting-de" class="tab-content">
         <h2 id="prompting">Prompting</h2>
         <h3>Reihenfolge beachten:</h3>
         <table>
@@ -301,6 +305,8 @@
             <br>
             Halte dich kurz, bringe es auf den Punkt
         </p>
+        </div>
+        <div id="glossary-de" class="tab-content">
         <h2 id="glossary">Glossar</h2>
         <input type="text" id="glossary-search-de" placeholder="Glossar durchsuchen...">
         <div class="glossary-container">
@@ -383,22 +389,21 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 
         <div id="content-en" class="lang-en">
         <h1>AI Models Overview</h1>
 
-        <h2>Table of Contents</h2>
-        <div class="toc">
-        <ul>
-            <li><a href="#providers-en">Providers</a></li>
-            <li><a href="#models-en">Models</a></li>
-            <li><a href="#categories-en">Categories</a></li>
-            <li><a href="#prompting-en">Prompting</a></li>
-            <li><a href="#glossary-en">Glossary</a></li>
-        </ul>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="providers-en">Providers</button>
+            <button class="tab-button" data-tab="models-en">Models</button>
+            <button class="tab-button" data-tab="categories-en">Categories</button>
+            <button class="tab-button" data-tab="prompting-en">Prompting</button>
+            <button class="tab-button" data-tab="glossary-en">Glossary</button>
         </div>
 
+        <div id="providers-en" class="tab-content active">
         <h2 id="providers-en">Providers</h2>
         <table>
             <thead>
@@ -508,13 +513,8 @@
                 </tr>
             </tbody>
         </table>
+        </div>
 
-        <h2 id="models-en">Models</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Model Name</th>
-                    <th>Website</th>
                     <th>Best for</th>
                 </tr>
             </thead>

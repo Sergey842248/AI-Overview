@@ -756,3 +756,30 @@ document.getElementById('glossary-search-de').addEventListener('input', (e) => {
 document.getElementById('glossary-search-en').addEventListener('input', (e) => {
     filterGlossary(e.target.value.toLowerCase(), 'en');
 });
+
+// Tab switching
+function setupTabs() {
+    document.querySelectorAll('.tabs').forEach(tabContainer => {
+        tabContainer.addEventListener('click', event => {
+            if (event.target.classList.contains('tab-button')) {
+                const tabId = event.target.dataset.tab;
+                const lang = tabId.endsWith('-de') ? 'de' : 'en';
+                const contentContainer = document.getElementById(`content-${lang}`);
+
+                contentContainer.querySelectorAll('.tab-button').forEach(button => {
+                    button.classList.remove('active');
+                });
+                event.target.classList.add('active');
+
+                contentContainer.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(tabId).classList.add('active');
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupTabs();
+});
