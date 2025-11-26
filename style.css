@@ -146,17 +146,23 @@ table {
 .lang-en {
     display: none;
 }
-#lang-switcher {
+.lang-switcher-container {
     position: fixed;
     top: 10px;
     right: 20px;
     z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#lang-switcher {
     width: 60px;
     height: 60px;
-    font-size: 28px;
+    font-size: 8px;
     cursor: pointer;
     background-color: var(--primary-color);
-    color: white;
+    color: #333;
     border: none;
     border-radius: 0 0 50% 50%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -164,8 +170,81 @@ table {
     text-align: center;
     line-height: 60px;
     margin-bottom: 10px;
+    padding-top: 7px;
 }
+
 #lang-switcher:hover {
+    background-color: #357abd;
+}
+
+#lang-menu {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    
+}
+
+#lang-menu[style*="display: block"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+#lang-menu option {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#lang-buttons {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#lang-buttons.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+#lang-buttons:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+#lang-buttons button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin: 2px 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#lang-buttons button:hover {
     background-color: #357abd;
 }
 
@@ -231,6 +310,20 @@ body.dark-mode {
     --header-bg: #bb86fc;
     --header-text: #121212;
     background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode #lang-menu {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+}
+
+body.dark-mode #lang-menu option {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .lang-switcher-container {
     color: #e0e0e0;
 }
 
