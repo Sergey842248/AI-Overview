@@ -9,8 +9,26 @@ let hiddenDatasets = {
     'categoriesChartEn': [false, false, false, false]
 };
 
+let translations = {};
+
+async function loadTranslations(lang) {
+    const response = await fetch(`translations/${lang}.json`);
+    translations = await response.json();
+}
+
+function updateFooter() {
+    if (!translations.footer) return;
+    const footer = document.getElementById('footer');
+    footer.innerHTML = `
+        ${translations.footer.version} • ${translations.footer.madeBy} <a href="https://github.com/Sergey842248">${translations.footer.author}</a> </br>
+        <a href="https://github.com/Sergey842248/AI-Overview/issues/new?template=bug_report.yml">${translations.footer.reportBug}</a> •
+        <a href="https://github.com/Sergey842248/AI-Overview/issues/new?template=feature_request.yml">${translations.footer.requestFeature}</a> </br>
+        <a href="https://github.com/Sergey842248/AI-Overview/releases/latest">${translations.footer.changelog}</a>
+    `;
+}
+
 // Language switcher
-function setLanguage(lang) {
+async function setLanguage(lang) {
     if (lang === 'en') {
         contentDe.style.display = 'none';
         contentEn.style.display = 'block';
@@ -22,6 +40,8 @@ function setLanguage(lang) {
         htmlEl.setAttribute('lang', 'de');
         langSwitcher.textContent = 'EN';
     }
+    await loadTranslations(lang);
+    updateFooter();
 }
 
 function getLangFromUrl() {
@@ -30,7 +50,9 @@ function getLangFromUrl() {
 }
 
 let currentLang = getLangFromUrl() || 'de';
-setLanguage(currentLang);
+(async () => {
+    await setLanguage(currentLang);
+})();
 
 langSwitcher.addEventListener('click', () => {
     const newLang = htmlEl.getAttribute('lang') === 'de' ? 'en' : 'de';

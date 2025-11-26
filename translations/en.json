@@ -1,0 +1,10 @@
+{
+  "footer": {
+    "version": "v2.0.0",
+    "madeBy": "Made with ❤️ by",
+    "author": "Parsa",
+    "reportBug": "Report a bug",
+    "requestFeature": "Request a feature",
+    "changelog": "Changelog"
+  }
+}
