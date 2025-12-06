@@ -15,6 +15,6 @@ This is a an AI Overview website project built using HTML, CSS, and JavaScript. 
 - [Models](https://sergey842248.github.io/AI-Overview/?lang=en#models-en)
 - [Categories](https://sergey842248.github.io/AI-Overview/?lang=en#categories-en)
 - [Prompting](https://sergey842248.github.io/AI-Overview/?lang=en#prompting-en)
-- [Glossary] (https://sergey842248.github.io/AI-Overview/?lang=en#glossary-en)
+- [Glossary](https://sergey842248.github.io/AI-Overview/?lang=en#glossary-en)
 
 
