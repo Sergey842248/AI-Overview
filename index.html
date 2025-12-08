@@ -62,6 +62,12 @@
                     <td>• Nur mittelmäßig gut in allen Bereichen <br>• Stark Halluzinierend</td>
                 </tr>
                 <tr>
+                    <td>Mistral</td>
+                    <td><a href="https://chat.mistral.ai">Mistral</a></td>
+                    <td>• Viele Open-Source Modelle<br>• Neuere Modelle gut in Mathe<br>• Europäisches Modell</td>
+                    <td>• Nicht ganz auf dem Level von OpenAI Modellen</td>
+                </tr>
+                <tr>
                     <td>Perplexity</td>
                     <td><a href="https://perplexity.ai">Perplexity</a></td>
                     <td>• Sehr gutes Researching</td>
@@ -159,6 +165,7 @@
                 <tr><td>Claude Haiku 4.5</td><td><a href="https://claude.ai">Claude</a></td><td>• Kontextverständnis<br>• Schnelle Antworten</td></tr>
                 <tr><td>Gemini 2.5 Flash</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• Schnelle Antworten</td></tr>
                 <tr><td>Gemini 3 Pro</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• Die besten Antworten insgesamt <br>• Sehr intelligent <br>• Sehr wenige Anfragen</td></tr>
+                <tr><td>Mistral 3</td><td><a href="https://chat.mistral.ai">Mistral</a></td><td>• Sehr gut in Mathematik<br><br></td></tr>                
                 <tr><td>Qwen3-Max</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Allrounder<br>• Komplexe Aufgaben</td></tr>
                 <tr><td>Qwen3-VL-235B-A22B</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Visuelles Verständnis</td></tr>
                 <tr><td>Qwen3-Coder</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Programmierung</td></tr>
@@ -199,7 +206,7 @@
         <div class="chart-container">
             <canvas id="categoriesChartDe"></canvas>
         </div>
-        <div id="split-charts-de" class="split-charts-container"></div>
+<div id="split-charts-de" class="split-charts-container"></div>
 <div class="ai-categories">
     <div class="item">
         <div class="cat">Kontextverständnis</div>
@@ -236,6 +243,7 @@
         <div class="cat">Anpassbarkeit</div>
         <div class="links">
             <a href="https://console.groq.com/playground">Groq console</a>
+            <a href="https://console.claude.ai/home">Mistral console</a>
         </div>
             </div>
 
@@ -250,6 +258,12 @@
                 <div class="cat">Unternehmensanwendungen</div>
                 <div class="links">
                     <a href="https://cohere.com">Cohere</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cat">Mathematik</div>
+                <div class="links">
+                    <a href="https://chat.mistral.ai">Mistral</a>
                 </div>
             </div>
         </div>
@@ -434,6 +448,12 @@
                     <td>• Only moderately good in all areas <br>• Strong halluzinations</td>
                 </tr>
                 <tr>
+                    <td>Mistral</td>
+                    <td><a href="https://chat.mistral.ai">Mistral</a></td>
+                    <td>• Many Open-Source Models<br>• Neuere Modelle gut in Mathe<br>• Europäisches Modell</td>
+                    <td>• Not exactly at the level of OpenAI Models</td>
+                </tr>
+                <tr>
                     <td>Perplexity</td>
                     <td><a href="https://perplexity.ai">Perplexity</a></td>
                     <td>• Very good researching</td>
@@ -515,6 +535,13 @@
         </table>
         </div>
 
+        <div id="models-en" class="tab-content">
+        <h2 id="models">Models</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model-name</th>
+                    <th>Website</th>
                     <th>Best for</th>
                 </tr>
             </thead>
@@ -524,6 +551,7 @@
                 <tr><td>Claude Haiku 4.5</td><td><a href="https://claude.ai">Claude</a></td><td>• Context understanding<br>• Fast answers</td></tr>
                 <tr><td>Gemini 2.5 Flash</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• Fast answers</td></tr>
                 <tr><td>Gemini 3 Pro</td><td><a href="https://gemini.google.com">Gemini</a></td><td>• The best answers overall<br>• Very intelligent <br>• Very few requests</td></tr>
+                <tr><td>Mistral 3</td><td><a href="https://chat.mistral.ai">Mistral</a></td><td>• Very good in maths<br><br></td></tr>   
                 <tr><td>Qwen3-Max</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• All-rounder<br>• Complex tasks</td></tr>
                 <tr><td>Qwen3-VL-235B-A22B</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Visual understanding</td></tr>
                 <tr><td>Qwen3-Coder</td><td><a href="https://chat.qwen.ai">Qwen</a></td><td>• Programming</td></tr>
@@ -541,8 +569,10 @@
                 <tr><td>Command R+</td><td><a href="https://cohere.com">Cohere</a></td><td>• Optimized for enterprise workflows</td></tr>
             </tbody>
         </table>
+        </div>
 
-        <h2 id="categories-en">Categories</h2>
+        <div id="categories-en" class="tab-content">
+        <h2 id="categories">Categories</h2>
         <div class="chart-controls">
             <div class="sort-controls">
                 <button id="split-chart-en" class="split-button">Split Charts</button>
@@ -564,24 +594,67 @@
         <div class="chart-container">
             <canvas id="categoriesChartEn"></canvas>
         </div>
-        <div id="split-charts-en" class="split-charts-container"></div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Best Provider</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Context understanding</td><td>• <a href="https://claude.ai">Claude (Model: Claude Sonnet 4.5)</a><br>• <a href="https://chat.minimax.io">MiniMax (Model: MiniMax M2)</a></td></tr>
-                <tr><td>Research</td><td>• <a href="https://perplexity.ai">Perplexity</a><br>• <a href="https://scira.ai">Scira</a></td></tr>
-                <tr><td>Reasoning</td><td>• <a href="https://claude.ai">Claude (Model: Sonnet 4.5)</a><br>• <a href="https://chatgpt.com">GPT-5</a></td></tr>
-                <tr><td>Visual understanding</td><td>• <a href="https://chat.qwen.ai">Qwen (Model: Qwen3-VL-235B-A22B)</a></td></tr>
-                <tr><td>Customizability (In terms of prompting)</td><td>• <a href="https://console.groq.com/playground">Groq console</a></td></tr>
-                <tr><td>Open-Source</td><td>• <a href="https://huggingface.co/spaces">Hugging Face</a></td></tr>
-                <tr><td>Enterprise Applications</td><td>• <a href="https://cohere.com">Cohere</a></td></tr>
-            </tbody>
-        </table>
+<div id="split-charts-en" class="split-charts-container"></div>
+<div class="ai-categories">
+    <div class="item">
+        <div class="cat">Context understanding</div>
+        <div class="links">
+            <a href="https://claude.ai">Claude (Sonnet 4.5)</a>
+            <a href="https://chat.minimax.io">MiniMax M2</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="cat">Research</div>
+        <div class="links">
+            <a href="https://perplexity.ai">Perplexity</a>
+            <a href="https://scira.ai">Scira</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="cat">Reasoning</div>
+        <div class="links">
+            <a href="https://claude.ai">Claude 4.5</a>
+            <a href="https://chatgpt.com">GPT-5</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="cat">Visual recognization</div>
+        <div class="links">
+            <a href="https://chat.qwen.ai">Qwen3-VL-235B-A22B</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="cat">Persnoalization</div>
+        <div class="links">
+            <a href="https://console.groq.com/playground">Groq console</a>
+            <a href="https://console.claude.ai/home">Mistral console</a>
+        </div>
+            </div>
+
+            <div class="item">
+                <div class="cat">Open-Source</div>
+                <div class="links">
+                    <a href="https://huggingface.co/spaces">Hugging Face</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="cat">Enterprise applications</div>
+                <div class="links">
+                    <a href="https://cohere.com">Cohere</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cat">Maths</div>
+                <div class="links">
+                    <a href="https://chat.mistral.ai">Mistral</a>
+                </div>
+            </div>
+        </div>
 
         <h2 id="prompting-en">Prompting</h2>
         <h3>Note the order:</h3>
