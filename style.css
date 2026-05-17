@@ -943,6 +943,25 @@ body.dark-mode .ai-categories .links a:hover {
     color: #90caf9 !important;
 }
 
+/* Discontinued notice styling */
+.discontinued-notice {
+    background-color: #fff3cd;
+    border: 2px solid #ffc107;
+    color: #856404;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+body.dark-mode .discontinued-notice {
+    background-color: #3d3200;
+    border-color: #ffc107;
+    color: #ffd966;
+}
+
 /* Tabs styling */
 .tabs {
     display: flex;
