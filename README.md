@@ -1,3 +1,7 @@
+> [!Important]
+> **This project is discontinued, feel free to fork it.**
+
+
 # [AI-Overview](https://sergey842248.github.io/AI-Overview/)
 
 This is a an AI Overview website project built using HTML, CSS, and JavaScript. The website provides comprehensive information about artificial intelligence. It's supposed to be a resource of information for anyone and is meant to be educational.
